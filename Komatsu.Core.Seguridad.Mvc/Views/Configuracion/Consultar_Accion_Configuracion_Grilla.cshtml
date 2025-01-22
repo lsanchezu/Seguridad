@@ -1,0 +1,266 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@{
+    if (Model.PaginaAccionPaginacion.ListaPaginaAccion.Count < 1)
+    {
+        @Komatsu.Core.Seguridad.Validation.Globals.Globals.GridSearchNotFound   
+    }
+    else
+    {
+        WebGrid Grid = new WebGrid(rowsPerPage: Model.PaginaAccionPaginacion.Paginacion.RowsPerPage, ajaxUpdateContainerId: "Id_Consultar_Accion_Grilla", ajaxUpdateCallback: "SetTotalRegistrosAccion");
+        Grid.Bind(Model.PaginaAccionPaginacion.ListaPaginaAccion, autoSortAndPage: false, rowCount: Model.PaginaAccionPaginacion.Paginacion.RowCount);
+    
+        <div id="Id_Consultar_Accion_Grilla"> 
+            @Grid.GetHtml(
+                headerStyle: "fix_head",
+                rowStyle: "fix_td",
+                alternatingRowStyle: "fix_td",
+                footerStyle: "pagination",
+                htmlAttributes: new { id = "GrillaConsultaPaginaAccion", @class = "tDefault" },
+                mode: WebGridPagerModes.All,
+                firstText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageFirst_Text,
+                previousText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageBack_Text,
+                nextText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageNext_Text,
+                lastText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageLast_Text,
+                columns: Grid.Columns(
+                Grid.Column("", Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, canSort: false, style: "person centrada", format:
+                @<text>
+                    @if(item.ChkAgregar)
+                    {
+                        <input checked="checked" type="checkbox" value="@item.Accion.IdAccion"/>
+                    }
+                    else
+                    {
+                        <input type="checkbox" value="@item.Accion.IdAccion"/>
+                    }
+                </text>),
+                Grid.Column("", "Grupo", canSort: false, style: "person centrada", format:
+                @<text>
+                    @item.Accion.Grupo.Nombre
+                    <input id="@item.Accion.IdAccion" value="@item.Accion.Grupo.IdGrupo" style="display:none"/>
+                </text>),
+                Grid.Column("Accion.CodigoHTML", "Código HTML", canSort: false, style: "person centrada"),
+                Grid.Column("Accion.Nombre", "Nombre", canSort: false, style: "person centrada"),
+                Grid.Column("Accion.Etiqueta", "Etiqueta", canSort: false, style: "person centrada"),
+                Grid.Column("Accion.MensajeToolTip", "Mensaje ToolTip", canSort: false, style: "person centrada")
+                )
+            )
+            @Html.HiddenFor(model => model.PaginaAccionPaginacion.Paginacion.RowCount, new { @id = "Ac_RowCount" })
+            @Html.HiddenFor(model => model.PaginaAccionPaginacion.Paginacion.RowsPerPage, new { @id = "Ac_RowsPerPage" })
+            @Html.HiddenFor(model => model.PaginaAccionPaginacion.Paginacion.FooterDesc, new { @id = "Ac_FooterDesc" })
+        </div>
+    }
+}
+
+@*<table id="GrillaAccion" class="tDefault" >
+    <tfoot>
+        <tr class="pagination">
+            <td colspan="16">
+                <a id="tfootPage" class="total_registros">[9]Registros encontrados, mostrando del [1]
+                    al [9] </a>
+            </td>
+        </tr>
+    </tfoot>
+    <thead>
+        <tr class="fix_head">
+            <th scope="col">
+                Incluir
+            </th>
+            <th scope="col">
+                Código HTML
+            </th>
+            <th scope="col">
+                Descripción
+            </th>
+            <th scope="col">
+                Etiqueta
+            </th>
+            <th scope="col">
+                Mensaje ToolTip
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_30" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="30"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonVerDetalleTareaResponsable
+            </td>
+            <td class="izquierda">
+                Ver Detalle
+            </td>
+            <td class="izquierda">
+                Ver Detalle
+            </td>
+            <td class="izquierda">
+                Ver Detalle
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_32" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="32"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonTerminarEjecucionTareaResponsable
+            </td>
+            <td class="izquierda">
+                Terminar Ejecución
+            </td>
+            <td class="izquierda">
+                Terminar Ejecución
+            </td>
+            <td class="izquierda">
+                Terminar Ejecución
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_34" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="34"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonReinicarEjecucionTareaResponsable
+            </td>
+            <td class="izquierda">
+                Reiniciar Ejecución
+            </td>
+            <td class="izquierda">
+                Reiniciar Ejecución
+            </td>
+            <td class="izquierda">
+                Reiniciar Ejecución
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_29" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="29"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonNuevaTareaResponsable
+            </td>
+            <td class="izquierda">
+                Nueva Tarea
+            </td>
+            <td class="izquierda">
+                Nueva Tarea
+            </td>
+            <td class="izquierda">
+                Nueva Tarea
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_31" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="31" checked="checked" />
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonIniciarEjecucionTareaResponsable
+            </td>
+            <td class="izquierda">
+                Iniciar Ejecución
+            </td>
+            <td class="izquierda">
+                Iniciar Ejecución
+            </td>
+            <td class="izquierda">
+                Iniciar Ejecución
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_33" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="33" checked="checked" />
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonDetenerEjecucionTareaResponsable
+            </td>
+            <td class="izquierda">
+                Detener Ejecución
+            </td>
+            <td class="izquierda">
+                Detener Ejecución
+            </td>
+            <td class="izquierda">
+                Detener Ejecución
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_27" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="27"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonCrearTareaResponsable
+            </td>
+            <td class="izquierda">
+                Crear Tarea
+            </td>
+            <td class="izquierda">
+                Crear Tarea
+            </td>
+            <td class="izquierda">
+                Crear Tarea
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_28" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="28"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonCrearTareaRequerimientoResponsable
+            </td>
+            <td class="izquierda">
+                Crear Requerimiento
+            </td>
+            <td class="izquierda">
+                Crear Requerimiento
+            </td>
+            <td class="izquierda">
+                Crear Requerimiento
+            </td>
+        </tr>
+        <tr class="fix_td">
+            <td class="centrar">
+                <div class="check" style="text-align: center">
+                    <input id="ID_Accion_35" name="ChkIncluir" onclick="CheckboxTempId(this);" type="checkbox"
+                        value="35"><input name="ChkIncluir" type="hidden" value="false">
+                </div>
+            </td>
+            <td class="izquierda">
+                BotonActualizarTareaResponsable
+            </td>
+            <td class="izquierda">
+                Actualizar Tarea
+            </td>
+            <td class="izquierda">
+                Actualizar Tarea
+            </td>
+            <td class="izquierda">
+                Actualizar Tarea
+            </td>
+        </tr>
+    </tbody>
+</table>*@

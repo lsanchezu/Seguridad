@@ -1,0 +1,110 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Mvc.Helper
+@using Komatsu.Core.Seguridad.Common
+
+@Html.HiddenFor(model => model.Aplicacion.IdAplicacion, new { @id = "A_IdAplicacion" })
+<div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Empresa :<span class="req"></span></label></div>
+            <div class="grid9">
+                @Html.MetaDropDownList(model => model.Empresa.IdsEmpresa,
+                new MultiSelectList((System.Collections.IEnumerable)Model.ListaEmpresa, "IdEmpresa", "Nombre",
+                (System.Collections.IEnumerable)Model.ListaEmpresa.Where(model => model.Check).Select(model => model.IdEmpresa)),
+                new
+                {
+                    @id = "AG_IdEmpresa",
+                    multiple = "multiple"
+                }) 
+                <script type="text/javascript" language="javascript">
+                    uniformPartialList("AG_IdEmpresa");
+
+                    $(function () {
+                        $("#AG_IdEmpresa").multiselect(
+                            {
+                                selectedList: 1,
+                                noneSelectedText: ' Seleccione '
+                            }
+                        ).multiselectfilter();
+                        $(".ui-multiselect").attr("style", "width: 210px");
+                    });
+                </script>
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Empresa.IdsEmpresa, "", new { @id = "errorAG_IdEmpresa", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Url :<span class="req"></span></label></div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Aplicacion.Url, new
+                {
+                    @id = "AG_Url",
+                    @maxLength = "200",
+                    @class = "textinput",
+                })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Aplicacion.Url, "", new { @id = "errorAG_Url", @class = "error" })
+            </div>
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <table class="tDefault" id="GrillaEditarAplicacion" style="text-align: center;">
+            <thead>
+                <tr class="fix_head">
+                    <th scope="col">
+                        Titulo
+                    </th>
+                    <th scope="col">
+                        Descripción
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 1; i++)
+                {
+                    <tr class="fix_td">
+                        <td>
+                            @Html.TextBoxFor(m => m.Aplicacion.Nombre, new
+                            {
+                                @id = "AG_NombreAplicacion" + @i,
+                                @maxLength = "200",
+                                @class = "textinput",
+                            })
+                            <br class="clear" />
+                            @Html.ValidationMessageFor(model => model.Aplicacion.Nombre, "", new { @id = "errorAG_NombreAplicacion" + i, @class = "error" })
+                        </td>
+                        <td class="izquierda">
+                            @Html.TextBoxFor(m => m.Aplicacion.Descripcion, new
+                            {
+                                @id = "AG_DescripcionAplicacion" + @i,
+                                @maxLength = "200",
+                                @class = "textinput",
+                            })
+                            <br class="clear" />
+                            @Html.ValidationMessageFor(model => model.Aplicacion.Descripcion, "", new { @id = "errorAG_DescripcionAplicacion" + i, @class = "error" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="formRow">
+        @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.EditarAplicacion || x.Accion.Grupo.IdGrupo.ToString() == Constantes.NuevaAplicacion))
+        {
+            <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+            name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+            @PG.Accion.Etiqueta</button> 
+        }
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<style type="text/css">
+.ui-multiselect-checkboxes{float: left; height: auto; width: 220px;}
+</style> 

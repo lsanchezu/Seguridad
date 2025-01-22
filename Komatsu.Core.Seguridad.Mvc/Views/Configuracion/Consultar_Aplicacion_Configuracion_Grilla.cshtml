@@ -1,0 +1,77 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@{
+    if (Model.AplicacionPaginacion.ListaAplicacion.Count < 1)
+    {
+        @Komatsu.Core.Seguridad.Validation.Globals.Globals.GridSearchNotFound   
+    }
+    else
+    {
+        var ACTDES = Model.ListaPaginaAccionPermiso.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ActDesAplicacion);
+        var Detalle = Model.ListaPaginaAccionPermiso.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ModificarAplicacion);
+        
+        WebGrid Grid = new WebGrid(rowsPerPage: Model.AplicacionPaginacion.Paginacion.RowsPerPage, ajaxUpdateContainerId: "Id_Consultar_Aplicacion_Grilla", ajaxUpdateCallback: "SetTotalRegistrosAplicacion");
+        Grid.Bind(Model.AplicacionPaginacion.ListaAplicacion, autoSortAndPage: false, rowCount: Model.AplicacionPaginacion.Paginacion.RowCount);
+    
+        <div id="Id_Consultar_Aplicacion_Grilla"> 
+            @Grid.GetHtml(
+                headerStyle: "fix_head",
+                rowStyle: "fix_td",
+                alternatingRowStyle: "fix_td",
+                footerStyle: "pagination",
+                htmlAttributes: new { id = "GrillaConsultaAplicacion", @class = "tDefault" },
+                mode: WebGridPagerModes.All,
+                firstText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageFirst_Text,
+                previousText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageBack_Text,
+                nextText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageNext_Text,
+                lastText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageLast_Text,
+                columns: Grid.Columns(
+                Grid.Column("IdAplicacion", "Código", canSort: true, style: "person centrada"),
+                Grid.Column("Empresa.Nombre", "Empresa", canSort: true, style: "person centrada"),
+                Grid.Column("Nombre", "Aplicación", canSort: true, style: "person centrada"),
+                Grid.Column("Descripcion", "Descripción", canSort: true, style: "person centrada"),
+                Grid.Column("Url", "Url", canSort: true, style: "person centrada"),
+                Grid.Column("Estado.Nombre", "Estado", canSort: true, style: "person centrada"),
+                Grid.Column("", Komatsu.Core.Seguridad.Validation.Globals.Globals.GridHeaderActions_ActivateDeactivate, canSort: false, style: "person centrada", format:
+                @<text>
+                    @if (ACTDES != null)
+                    {
+                        if (item.Estado.IdEstado == 1)
+                        {
+                            <a  style="cursor:pointer" class="darbajae" onclick="ActivarDesactivarAplicacion(@item.IdAplicacion, 2, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Desactivar')"/>                                                                          
+                        }
+                        else
+                        {
+                            <a  style="cursor:pointer" class="daraltae" onclick="ActivarDesactivarAplicacion(@item.IdAplicacion, 1, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Activar')"/>       
+                        }
+                    }
+                </text>),
+                Grid.Column("", "Detalle", canSort: false, style: "person centrada", format:
+                @<text>
+                    @{
+                        if (Detalle != null)
+                        {
+                            <a  style="" class="select_table" onclick="EditarAplicacion(@item.IdAplicacion);"/>
+                        }
+                    }      
+                </text>),
+                Grid.Column("", "Módulo(s)", canSort: false, style: "person centrada", format:
+                @<text>
+                    @{
+                        var PGModulo = Model.Usuario.ListaRol.Find(x => x.SiSuperAdmi && x.Aplicacion.IdAplicacion == 1);
+                        if (PGModulo != null)
+                        {
+                            <a  style="cursor: pointer" class="view_table" onclick="VerModulo(@item.Empresa.IdEmpresa,@item.IdAplicacion);"/>                                                                          
+                        }
+                    }
+                </text>)
+                )
+            )
+            @Html.HiddenFor(model => model.AplicacionPaginacion.Paginacion.RowCount, new { @id = "A_RowCount" })
+            @Html.HiddenFor(model => model.AplicacionPaginacion.Paginacion.RowsPerPage, new { @id = "A_RowsPerPage" })
+            @Html.HiddenFor(model => model.AplicacionPaginacion.Paginacion.FooterDesc, new { @id = "A_FooterDesc" })
+        </div>
+    }
+}
+

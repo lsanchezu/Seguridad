@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NExtra.Mvc</name>
+    </assembly>
+    <members>
+        <member name="T:NExtra.Mvc.ActionFilters.JsonForQueryStringAttribute">
+            <summary>
+            This attribute can be added to controller actions
+            and will send the view model as JSON, if either a
+            query var simply exists or if has a certain value.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.ActionFilters.RequireBasicAuthenticationAttribute">
+            <summary>
+            This attribute can be added to controller actions
+            and will ensure that users provide required basic
+            authentication credentials. It can either require
+            that the user is simply logged in, or that he/she
+            is logged in with certain credentials.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.Extensions.Controller_Extensions">
+            <summary>
+            Extension methods for System.Web.Mvc.Controller.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.Extensions.IEnumerable_SelectListExtensions">
+            <summary>
+            SelectList-related extension for IEnumerable, to
+            convert various collection types to SelectLists.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.Extensions.WebViewPage_Extensions">
+            <summary>
+            Extension methods for System.Web.Mvc.WebViewPage.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.UrlifyHelper">
+            <summary>
+            This helper class can be used to urlify strings,
+            using a custom string urlifier. You can use the
+            one in NExtra.Url or create one of your own.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            
+            Make sure to set the Urlifier property when the
+            application starts, and you are good to go.
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.FormBlockForHelper">
+            <summary>
+            This helper can be used to generate a form block
+            for a model property. It embeds an editor within
+            a tag structure identical to the one that Visual
+            Studio uses, when it auto-generates a model form.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            
+            This helper can be used to generate a form block
+            This helper will use metadata to translate label
+            values and validation error messages. Instead of
+            using property attributes to set these values, a
+            better approach is to enable one of the metadata
+            providers in NExtra.Mvc.Localization.
+            </remarks>
+        </member>
+        <member name="M:NExtra.Mvc.HtmlHelpers.FormBlockForHelper.FormBlockFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Web.Mvc.MvcHtmlString)">
+            <summary>
+            Generate a form block. Use this method like this:
+            @Html.FormBlockFor(x => x.UserName, TextBoxFor(x => x.UserName))
+            </summary>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.ConditionalHelper">
+            <summary>
+            This class can be used to get one of two possible
+            values, depending on a boolean expression.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.GlobalResourceHelper">
+            <summary>
+            This helper can be used to format global resource
+            file values to proper HTML.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.ResourceFileValueHelper">
+            <summary>
+            This helper can be used to format a resource file
+            value to proper HTML.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.LocalResourceHelper">
+            <summary>
+            This helper can be used to format local resource
+            file values to proper HTML.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.HtmlHelpers.TranslateHelper">
+            <summary>
+            This helper class can be used to translate stuff,
+            using a custom translator. You can use anyone of
+            the ones in NExtra.Localization or create one of
+            your own.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            
+            Make sure to set up the ITranslator property when
+            the application starts and you are good to go.
+            </remarks>
+        </member>
+        <member name="T:NExtra.Mvc.Localization.LocalizedDataAnnotationsModelMetadataProvider">
+            <summary>
+             This class can be used instead of the default metadata
+             provider specified in Global.asax. It is automatically 
+             translates property display values and all model error
+             messages, using a resource file.
+            </summary>
+             <remarks>
+             With this class, you do not have to decorate an entity
+             with DisplayName or provide an ErrorMessage text for a
+             validation attribute. The class uses a convention that
+             it automatically applies.
+             
+             So, just provide translations that use this convention
+             and your entities will translate themselves.
+             
+             The default key format that is used for DisplayName is:
+                 [Type.FullName]_[PropertyName]
+                 e.g. MyCoolProject_User_UserName
+             
+             The default key format that's used for ErrorMessage is:
+                 [Type.FullName]_[PropertyName]_[AttributeName]
+                 e.g. MyCoolProject_User_UserName_RequiredError
+             
+             Depending on which ITranslator implementation that the
+             class is given, these keys are translated in different
+             ways. If you look in NExtra.Localization, you have two
+             translators there that you can use.
+             
+             If overrideMode is set to true, already defined values
+             for DisplayName and ErrorMessage are overridden. If it
+             is set to false, the original values will be kept.
+             
+             The dotReplacement will be used to convert the dots in
+             the full name of a class or property. User.UserName is
+             by default converted to User_UserName.
+             
+             Author:     Daniel Saidi [daniel.saidi@gmail.com]
+             Link:       http://danielsaidi.github.com/nextra
+             </remarks>
+        </member>
+        <member name="P:NExtra.Mvc.Localization.LocalizedDataAnnotationsModelMetadataProvider.DotReplacement">
+            <summary>
+            The separator to use instead of dots.
+            </summary>
+        </member>
+        <member name="T:NExtra.Mvc.Testing.ControllerExtensions">
+            <summary>
+            Test-related methods for System.Web.Mvc.Controller.
+            </summary>
+            <remarks>
+            Author:     Daniel Saidi [daniel.saidi@gmail.com]
+            Link:       http://danielsaidi.github.com/nextra
+            </remarks>
+        </member>
+        <member name="M:NExtra.Mvc.Testing.ControllerExtensions.CallWithModelValidation``3(``0,System.Func{``0,``1},``2)">
+            <summary>
+            Use this method to automatically apply model validation,
+            when calling actions that require it.
+            
+            By default, model validation is NOT executed if actions
+            are called outside the MVC context, e.g. in testing. To
+            make sure that validation is executed, call this method
+            and let it call the action. Do not call it directly.
+            </summary>
+        </member>
+    </members>
+</doc>

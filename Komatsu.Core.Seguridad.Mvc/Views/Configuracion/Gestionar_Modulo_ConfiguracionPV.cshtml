@@ -1,0 +1,82 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common
+
+@Html.HiddenFor(model => model.Modulo.IdModulo, new { @id = "M_IdModulo" })  
+<div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label>
+                    Aplicación :<span class="req"></span></label></div>
+            <div class="grid7">
+                @Html.DropDownListFor(model => model.Aplicacion.IdAplicacion,
+                new SelectList(Model.ListaAplicacion, "IdAplicacion", "Nombre"),
+                @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+                {
+                    @id = "MG_IdAplicacion"
+                })
+                <script type="text/javascript" language="javascript">
+                    uniformPartialList('MG_IdAplicacion');
+                </script>
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Aplicacion.IdAplicacion, "", new { @id = "errorMG_IdAplicacion", @class = "error" })
+            </div>
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <table class="tDefault" id="GrillaEditarModulo" style="text-align: center;">
+            <thead>
+                <tr class="fix_head">
+                    <th scope="col">
+                        Nombre
+                    </th>
+                    <th scope="col">
+                        Descripción
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 1; i++)
+                {
+                    <tr class="fix_td">
+                        <td>
+                            @Html.TextBoxFor(m => m.Modulo.Nombre, new
+                            {
+                                @id = "MG_NombreModulo" + @i,
+                                @maxLength = "50",
+                                @class = "textinput",
+                                @onkeypress = "return validarNumerosLetrasAC(event)"
+                            })
+                            <br class="clear" />
+                            @Html.ValidationMessageFor(model => model.Modulo.Nombre, "", new { @id = "errorMG_NombreModulo" + i, @class = "error" })
+                        </td>
+                        <td class="izquierda">
+                            @Html.TextBoxFor(m => m.Modulo.Descripcion, new
+                            {
+                                @id = "MG_DescripcionModulo" + @i,
+                                @maxLength = "50",
+                                @class = "textinput",
+                                @onkeypress = "return validarNumerosLetrasAC(event)"
+                            })
+                            <br class="clear" />
+                            @Html.ValidationMessageFor(model => model.Modulo.Descripcion, "", new { @id = "errorMG_DescripcionModulo" + i, @class = "error" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="formRow">
+        @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.EditarModulo || x.Accion.Grupo.IdGrupo.ToString() == Constantes.NuevoModulo))
+        {
+            <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+            name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+            @PG.Accion.Etiqueta</button> 
+        }
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+ 

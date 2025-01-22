@@ -1,0 +1,11 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+
+@Html.DropDownListFor(model => model.Agrupacion.IdAgrupacion,
+new SelectList(Model.ListaAgrupacion, "IdAgrupacion", "Descripcion"),
+new
+{
+    @id = "PG_IdAgrupacion"
+})
+<script type="text/javascript" language="javascript">
+    uniformPartialList('PG_IdAgrupacion');
+</script>  

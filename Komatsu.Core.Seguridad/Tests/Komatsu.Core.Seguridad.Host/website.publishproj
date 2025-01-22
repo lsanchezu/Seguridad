@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+***********************************************************************************************
+website.publishproj
+
+WARNING: DO NOT MODIFY this file, it is used for the web publish process.
+
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+***********************************************************************************************
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f0ebf09b-c66a-400b-9424-7ac0f0c11cb1}</ProjectGuid>
+    <SourceWebPhysicalPath>$(MSBuildThisFileDirectory)</SourceWebPhysicalPath>
+    <SourceWebVirtualPath>/Komatsu.Core.Seguridad.Host</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebMetabasePath>
+    </SourceWebMetabasePath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- for VS2010 we need to use 10.5 but for VS2012+ we should use VisualStudioVersion -->
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)' =='' and '$(VisualStudioVersion)' == 10.0 ">10.5</WebPublishTargetsVersion>
+    <WebPublishTargetsVersion Condition=" '$(WebPublishTargetsVersion)'=='' ">$(VisualStudioVersion)</WebPublishTargetsVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(WebPublishTargetsVersion)</VSToolsPath>
+    <_WebPublishTargetsPath Condition=" '$(_WebPublishTargetsPath)'=='' ">$(VSToolsPath)</_WebPublishTargetsPath>
+    <AssemblyFileVersion Condition="'$(AssemblyFileVersion)' == ''">1.0.0.0</AssemblyFileVersion>
+    <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Komatsu.Core.Common\Komatsu.Core.Seguridad.Common.csproj">
+      <Project>{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}</Project>
+      <Name>Komatsu.Core.Seguridad.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\Komatsu.Core.Seguridad.BusinessEntities.csproj">
+      <Project>{10752A9D-8D43-4A9C-BF2E-57219B8525C2}</Project>
+      <Name>Komatsu.Core.Seguridad.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Business Logic\Komatsu.Core.Seguridad.BusinessLogic\Komatsu.Core.Seguridad.BusinessLogic.csproj">
+      <Project>{7CEC2268-BC34-44DC-A25B-5DC745AC1790}</Project>
+      <Name>Komatsu.Core.Seguridad.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Resource Access\Komatsu.Core.Seguridad.DataAccess\Komatsu.Core.Seguridad.DataAccess.csproj">
+      <Project>{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}</Project>
+      <Name>Komatsu.Core.Seguridad.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service Interface\Komatsu.Core.Seguridad.DataContracts\Komatsu.Core.Seguridad.DataContracts.csproj">
+      <Project>{80840956-911F-450C-8BAC-C18CA9A65E49}</Project>
+      <Name>Komatsu.Core.Seguridad.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\Komatsu.Core.Seguridad.FaultContracts.csproj">
+      <Project>{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}</Project>
+      <Name>Komatsu.Core.Seguridad.FaultContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service Interface\Komatsu.Core.Seguridad.MessageContracts\Komatsu.Core.Seguridad.MessageContracts.csproj">
+      <Project>{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}</Project>
+      <Name>Komatsu.Core.Seguridad.MessageContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service Interface\Komatsu.Core.Seguridad.ServiceContracts\Komatsu.Core.Seguridad.ServiceContracts.csproj">
+      <Project>{A617D1D5-6FE0-4746-B02D-EA7921207A4D}</Project>
+      <Name>Komatsu.Core.Seguridad.ServiceContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Source\Service Interface\Komatsu.Core.Seguridad.ServiceImplementation\Komatsu.Core.Seguridad.ServiceImplementation.csproj">
+      <Project>{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}</Project>
+      <Name>Komatsu.Core.Seguridad.ServiceImplementation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(_WebPublishTargetsPath)\Web\Microsoft.WebSite.Publishing.targets" />
+</Project>

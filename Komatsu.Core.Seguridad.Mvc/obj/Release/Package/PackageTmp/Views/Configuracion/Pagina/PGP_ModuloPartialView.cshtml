@@ -1,0 +1,13 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+
+@Html.DropDownListFor(model => model.Modulo.IdModulo,
+new SelectList(Model.ListaModulo, "IdModulo", "Nombre"),
+@Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+{
+    @id = "PG_IdModuloPadre"
+})
+<br class="clear" />
+@Html.ValidationMessageFor(model => model.Modulo.IdModulo, "", new { @id = "errorPG_IdModuloPadre", @class = "error" })
+<script type="text/javascript" language="javascript">
+    uniformPartialList('PG_IdModuloPadre');
+</script>

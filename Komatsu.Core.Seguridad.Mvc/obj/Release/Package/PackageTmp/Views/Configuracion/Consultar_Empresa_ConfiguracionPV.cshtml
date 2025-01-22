@@ -1,0 +1,84 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/View/Seguridad.Configuracion.Empresa.js")"></script>
+@Html.Hidden("Url_Consultar_Empresa", Url.Action("Consultar_Empresa", "Configuracion"))
+@Html.Hidden("Url_Registrar_Empresa", Url.Action("Registrar_Empresa", "Configuracion"))
+@Html.Hidden("Url_Editar_Empresa", Url.Action("Editar_Empresa", "Configuracion"))
+@Html.Hidden("Url_Insertar_Empresa", Url.Action("Insertar_Empresa", "Configuracion"))
+@Html.Hidden("Url_Actualizar_Empresa", Url.Action("Actualizar_Empresa", "Configuracion"))
+@Html.Hidden("Url_ActualizarEstado_Empresa", Url.Action("ActualizarEstado_Empresa", "Configuracion"))
+
+<div class="wrapper">
+    <div class="main">
+        <div class="form">
+            <fieldset>
+                <div class="widget fluid">
+                    <div class="whead">
+                        <h6>
+                            Criterios de Búsqueda</h6>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="formRow fluid">
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Nombre :<span class="req"></span></label></div>
+                            <div class="grid9">
+                                @Html.TextBoxFor(m => m.Empresa.Nombre, new
+                                {
+                                    @id = "textEmpresaNombre",
+                                    maxLength = "200",
+                                    @class = "textinput",
+                                    @onkeypress = "EnterSubmit(event,'BuscarEmpresa');"
+                                })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formRow noBorderB">
+                        <div id="status2" class="status">
+                        </div>
+                        <div class="formSubmit">
+                            @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ConsultarEmpresa))
+                            {
+                                <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+                                name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+                                @PG.Accion.Etiqueta</button> 
+                            }
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="whead">
+            <div class="whead">
+                <span class="titleIcon check"></span>
+                <h6>
+                    Resultados de la Búsqueda</h6>
+                    <div class="num right">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="Id_Consultar_Empresa_Grilla">
+        </div>
+    </div>  
+</div>
+
+<div id="dialogGestionarEmpresa" class="j_modal" style="display:none">
+</div>
+
+<script type="text/javascript" language="javascript">
+    BuscarEmpresa();
+    InicioJPopUp("#dialogGestionarEmpresa", 700, 270, true, "Gestionar Empresa");
+</script>

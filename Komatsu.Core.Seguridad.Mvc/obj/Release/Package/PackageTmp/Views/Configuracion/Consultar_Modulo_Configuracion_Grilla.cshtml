@@ -1,0 +1,70 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@{
+    if (Model.ModuloPaginacion.ListaModulo.Count < 1)
+    {
+        @Komatsu.Core.Seguridad.Validation.Globals.Globals.GridSearchNotFound   
+    }
+    else
+    {
+        var ACTDES = Model.ListaPaginaAccionPermiso.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ActDesModulo);
+        var Detalle = Model.ListaPaginaAccionPermiso.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ModificarModulo);
+        
+        WebGrid Grid = new WebGrid(rowsPerPage: Model.ModuloPaginacion.Paginacion.RowsPerPage, ajaxUpdateContainerId: "Id_Consultar_Modulo_Grilla", ajaxUpdateCallback: "SetTotalRegistrosModulo");
+        Grid.Bind(Model.ModuloPaginacion.ListaModulo, autoSortAndPage: false, rowCount: Model.ModuloPaginacion.Paginacion.RowCount);
+    
+        <div id="Id_Consultar_Modulo_Grilla"> 
+            @Grid.GetHtml(
+                headerStyle: "fix_head",
+                rowStyle: "fix_td",
+                alternatingRowStyle: "fix_td",
+                footerStyle: "pagination",
+                htmlAttributes: new { id = "GrillaConsultaModulo", @class = "tDefault" },
+                mode: WebGridPagerModes.All,
+                firstText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageFirst_Text,
+                previousText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageBack_Text,
+                nextText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageNext_Text,
+                lastText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageLast_Text,
+                columns: Grid.Columns(
+                Grid.Column("Aplicacion.Empresa.Nombre", "Empresa", canSort: true, style: "person centrada"),
+                Grid.Column("Aplicacion.Nombre", "Aplicación", canSort: true, style: "person centrada"),
+                Grid.Column("Nombre", "Módulo", canSort: true, style: "person centrada"),
+                Grid.Column("Descripcion", "Descripción", canSort: true, style: "person centrada"),
+                Grid.Column("Estado.Nombre", "Estado", canSort: true, style: "person centrada"),
+                Grid.Column("", Komatsu.Core.Seguridad.Validation.Globals.Globals.GridHeaderActions_ActivateDeactivate, canSort: false, style: "person centrada", format:
+                @<text>
+                    @if (ACTDES != null)
+                    {
+                        if (item.Estado.IdEstado == 1)
+                        {
+                            <a  style="cursor:pointer" class="darbajae" onclick="ActivarDesactivarModulo(@item.IdModulo, 2, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Desactivar')"/>                                                                          
+                        }
+                        else
+                        {
+                            <a  style="cursor:pointer" class="daraltae" onclick="ActivarDesactivarModulo(@item.IdModulo, 1, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Activar')"/>       
+                        }
+                    }
+                </text>),
+                Grid.Column("", "Detalle", canSort: false, style: "person centrada", format:
+                @<text>
+                    @{
+                        if (Detalle != null)
+                        {
+                            <a  style="" class="select_table" onclick="EditarModulo(@item.IdModulo);"/>
+                        }
+                    }
+                </text>),
+                Grid.Column("", "Página(s)", canSort: false, style: "person centrada", format:
+                @<text>
+                    <a  style="cursor: pointer" class="view_table" onclick="VerPagina(@item.Aplicacion.Empresa.IdEmpresa,@item.Aplicacion.IdAplicacion,@item.IdModulo);"/>                                                                          
+                </text>)
+                )
+            )
+            @Html.HiddenFor(model => model.ModuloPaginacion.Paginacion.RowCount, new { @id = "M_RowCount" })
+            @Html.HiddenFor(model => model.ModuloPaginacion.Paginacion.RowsPerPage, new { @id = "M_RowsPerPage" })
+            @Html.HiddenFor(model => model.ModuloPaginacion.Paginacion.FooterDesc, new { @id = "M_FooterDesc" })
+        </div>
+    }
+}
+

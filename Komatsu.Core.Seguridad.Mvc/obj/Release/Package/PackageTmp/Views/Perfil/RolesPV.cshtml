@@ -1,0 +1,32 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.PerfilViewModel
+
+@if (Model.ListaRol.Count > 0)
+{
+    WebGrid wgRol = new WebGrid(canPage: false);
+    wgRol.Bind(Model.ListaRol);
+    <div id="contenedor-grid-Rol">
+        @wgRol.GetHtml(
+            headerStyle: "fix_head", rowStyle: "fix_td", alternatingRowStyle: "fix_td", footerStyle: "pagination",
+            htmlAttributes: new { id = "dgvDatos", @class = "tDefault checkAll" },
+            columns:
+            wgRol.Columns(wgRol.Column("Sel.", canSort: false, format: @<text>
+            @Html.RadioButton("checkRol", false, new
+            {
+                @id = @item.IdRol,
+                @value = @item.IdRol,
+                @style = "float:none",
+                @class = "chk_rols",
+                @name = "RadioRol",
+                @onchange = "CargarTreeView($(this).attr('Id'));"
+            })
+                </text>),
+        wgRol.Column("Rol", format: @<text> <label for="@item.IdRol" >@item.Nombre</label> </text>, canSort: false)))
+    </div>
+}
+else 
+{
+    <div>
+        Debe seleccionar la aplicación
+    </div>
+}
+       

@@ -1,0 +1,188 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/View/Seguridad.Configuracion.Pagina.js")"></script>
+@Html.Hidden("Url_Consultar_Pagina", Url.Action("Consultar_Pagina", "Configuracion"))
+@Html.Hidden("Url_Consultar_PaginaAccion", Url.Action("Consultar_PaginaAccion", "Configuracion"))
+@Html.Hidden("Url_Registrar_Pagina", Url.Action("Registrar_Pagina", "Configuracion"))
+@Html.Hidden("Url_Registrar_PaginaPadre", Url.Action("Registrar_PaginaPadre", "Configuracion"))
+@Html.Hidden("Url_Registrar_PaginaTipo", Url.Action("PaginaTipo", "Configuracion"))
+@Html.Hidden("Url_Editar_Pagina", Url.Action("Editar_Pagina", "Configuracion"))
+@Html.Hidden("Url_Insertar_Pagina", Url.Action("Insertar_Pagina", "Configuracion"))
+@Html.Hidden("Url_Actualizar_Pagina", Url.Action("Actualizar_Pagina", "Configuracion"))
+@Html.Hidden("Url_ActualizarEstado_Pagina", Url.Action("ActualizarEstado_Pagina", "Configuracion"))
+@Html.Hidden("Url_P_AplicacionPorEmpresa", Url.Action("P_AplicacionPorEmpresa", "Configuracion"))
+@Html.Hidden("Url_P_ModuloPorAplicacion", Url.Action("P_ModuloPorAplicacion", "Configuracion"))
+@Html.Hidden("Url_P_PaginaPadrePorModulo", Url.Action("P_PaginaPadrePorModulo", "Configuracion"))
+@Html.Hidden("Url_AgrupacionPorModulo", Url.Action("P_AgrupacionPorModulo", "Configuracion"))
+@Html.Hidden("Url_P_Empresa", Url.Action("P_Empresa", "Configuracion"))
+@Html.Hidden("Url_P_Aplicacion", Url.Action("P_Aplicacion", "Configuracion"))
+@Html.Hidden("Url_P_Modulo", Url.Action("P_Modulo", "Configuracion"))
+
+@Html.Hidden("Url_P_AplicacionPorEmpresaPadre", Url.Action("P_AplicacionPorEmpresaPadre", "Configuracion"))
+@Html.Hidden("Url_P_ModuloPorAplicacionPadre", Url.Action("P_ModuloPorAplicacionPadre", "Configuracion"))
+
+<div class="wrapper">
+    <div class="main">
+        <div class="form">
+            <fieldset>
+                <div class="widget fluid">
+                    <div class="whead">
+                        <h6>
+                            Criterios de Búsqueda
+                        </h6>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="formRow fluid">
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Empresa :<span class="req"></span>
+                                </label>
+                            </div>
+                            <div class="grid9" id="P_Div_Empresa">
+                                @Html.DropDownListFor(model => model.Empresa.IdEmpresa,
+                                new SelectList(Model.ListaEmpresa, "IdEmpresa", "Nombre"),
+                                @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+                                {
+                                    @id = "P_IdEmpresa",
+                                    @onkeypress = "EnterSubmit(event,'BuscarPagina');",
+                                    @onchange = "P_BuscarAplicacionPorEmpresa();P_BuscarModuloPorAplicacion();"
+                                })
+                            </div>
+                        </div>
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Aplicación :<span class="req"></span>
+                                </label>
+                            </div>
+                            <div class="grid9" id="P_Div_Aplicacion">
+                                <select id="tmp2">
+                                    <option>- TODOS -</option>
+                                </select>
+                                <script type="text/javascript" language="javascript">
+                                    uniformPartialList('tmp2');
+                                </script>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="formRow fluid">
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Modulo :<span class="req"></span>
+                                </label>
+                            </div>
+                            <div class="grid9" id="P_Div_Modulo">
+                                <select id="tmp3">
+                                    <option>- TODOS -</option>
+                                </select>
+                                <script type="text/javascript" language="javascript">
+                                    uniformPartialList('tmp3');
+                                </script>
+                            </div>
+                        </div>
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Nombre :<span class="req"></span>
+                                </label>
+                            </div>
+                            <div class="grid9">
+                                @Html.TextBoxFor(m => m.Pagina.Nombre, new
+                           {
+                               @id = "P_NombrePagina",
+                               @maxLength = "200",
+                               @class = "textinput",
+                               @onkeypress = "EnterSubmit(event,'BuscarPagina');"
+                           })
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="formRow fluid">
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Agrupa :<span class="req"></span>
+                                </label>
+                            </div>
+                            <div class="grid9" id="P_Div_Aplicacion">
+                                <select id="iAgrupcion">
+                                    <option> Agrupación </option>
+                                </select>
+                                <button style="cursor: pointer" class="buttonS bBlue formSubmit group_button" title="+">+</button>
+                            </div>
+                        </div>
+                        <div class="clear"> </div>
+
+                        <div class="grid3">
+                            <button style="cursor: pointer" class="buttonS bBlue formSubmit group_button" title="+">+</button>
+                        </div>
+                    </div>*@
+                    <div class="formRow noBorderB">
+                        <div id="status2" class="status">
+                        </div>
+                        
+                        <div class="formSubmit">
+                            
+                            @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ConsultarPagina))
+                            {
+                                <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+                                        name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+                                    @PG.Accion.Etiqueta
+                                </button>
+                            }
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="whead">
+            <div class="whead">
+                <span class="titleIcon check"></span>
+                <h6>
+                    Resultados de Búsqueda
+                </h6>
+                <div class="num right">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="Id_Consultar_Pagina_Grilla">
+        </div>
+    </div>
+</div>
+
+<div id="dialogGestionarPaginaTipo" class="j_modal" style="display:none">
+</div>
+
+<div id="dialogGestionarPaginaPadre" class="j_modal" style="display:none">
+</div>
+
+<div id="dialogGestionarPaginaPadreEdit" class="j_modal" style="display:none">
+</div>
+
+
+<div id="dialogGestionarPagina" class="j_modal" style="display:none">
+</div>
+
+<script type="text/javascript" language="javascript">
+    BuscarPagina();
+    InicioJPopUp("#dialogGestionarPaginaTipo", 250, 'auto', true, "Gestionar Tipo Página");
+    InicioJPopUp("#dialogGestionarPaginaPadre", 1100, 'auto', true, "Gestionar Página Padre");
+    InicioJPopUp("#dialogGestionarPagina", 1100, 'auto', true, "Gestionar Página");
+    InicioJPopUp("#dialogGestionarPaginaPadreEdit", 1100, 'auto', true, "Gestionar Página");
+</script>

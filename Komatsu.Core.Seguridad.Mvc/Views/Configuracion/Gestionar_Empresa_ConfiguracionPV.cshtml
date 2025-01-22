@@ -1,0 +1,102 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common
+
+@Html.HiddenFor(model => model.Empresa.IdEmpresa, new { @id = "E_IdEmpresa" })
+<div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label" >
+                    Nombre:
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Empresa.Nombre, new
+                {
+                    @id = "EG_NombreEmpresa",
+                    @maxLength = "50",
+                    @class = "textinput",
+                    @onkeypress = "return validarNumerosLetrasAC(event)",
+                })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Empresa.Nombre, "", new { @id = "errorEG_NombreEmpresa", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label" >
+                    Abreviatura:
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Empresa.Abreviatura, new
+                {
+                    @id = "EG_Abreviatura",
+                    @maxLength = "100",
+                    @class = "textinput",
+                    @onkeypress = "EnterSubmit(event,'BuscarEmpresa');"
+                })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Empresa.Abreviatura, "", new { @id = "errorEG_Abreviatura", @class = "error" })
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label" >
+                    Código Empresa:
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Empresa.CodigoEmpresa, new
+                {
+                    @id = "EG_CodigoEmpresa",
+                    @maxLength = "10",
+                    @class = "textinput",
+                    @onkeypress = "return validarNumerosLetrasAC(event)",
+                    onpaste="return false"
+                })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Empresa.CodigoEmpresa, "", new { @id = "errorEG_CodigoEmpresa", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label" >
+                    RUC:
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Empresa.ContentStyle, new
+                {
+                    @id = "EG_ContentStyle",
+                    @maxLength = "11",
+                    @class = "textinput",
+                    @onkeypress = "return validarNumerosLetrasAC(event)",
+                    onpaste="return false"
+                    
+                })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Empresa.ContentStyle, "", new { @id = "errorEG_ContentStyle", @class = "error" })
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="formRow">
+        @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.EditarEmpresa || x.Accion.Grupo.IdGrupo.ToString() == Constantes.NuevaEmpresa))
+        {
+            <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+            name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+            @PG.Accion.Etiqueta</button> 
+        }
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+

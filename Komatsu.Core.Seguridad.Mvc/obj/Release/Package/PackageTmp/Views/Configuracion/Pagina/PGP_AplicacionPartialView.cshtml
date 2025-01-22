@@ -1,0 +1,14 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+
+@Html.DropDownListFor(model => model.Aplicacion.IdAplicacion,
+new SelectList(Model.ListaAplicacion, "IdAplicacion", "Nombre"),
+@Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+{
+    @id = "PG_IdAplicacionPadre",
+    @onchange = "P_BuscarModuloPorAplicacionPadre(this);"
+})
+<br class="clear" />
+@Html.ValidationMessageFor(model => model.Aplicacion.IdAplicacion, "", new { @id = "errorPG_IdAplicacionPadre", @class = "error" })
+<script type="text/javascript" language="javascript">
+    uniformPartialList('PG_IdAplicacionPadre');
+</script>

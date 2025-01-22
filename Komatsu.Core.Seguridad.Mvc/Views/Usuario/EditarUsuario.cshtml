@@ -1,0 +1,173 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@using (Ajax.BeginForm(null, null, null, new { id = "frmEditarUsuario" }))
+{
+    @Html.HiddenFor(model => model.Usuario.IdUsuario, new { @id = "IdUsuario1" })
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Usuario :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Usuario.UserName, new
+       {
+           @id = "IdUserName",
+           @maxLength = "50",
+           @class = "textinput",
+           @onkeypress = "return validarNumerosLetrasAC(event)"
+       })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Usuario.UserName, "", new { @id = "errorIdUserName", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Nombres Completos :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Usuario.NombreApellido, new
+       {
+           @id = "IdNombre2",
+           @maxLength = "50",
+           @class = "textinput",
+       })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Usuario.NombreApellido, "", new { @id = "errorIdNombre2", @class = "error" })
+            </div>
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Empresa :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.DropDownListFor(model => model.Usuario.Empresa.IdEmpresa,
+            new SelectList(Model.ListaEmpresa, "IdEmpresa", "Nombre"), new
+            {
+                @id = "IdEmpresa3",
+                @Value = Model.Usuario.Empresa.IdEmpresa
+            })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Usuario.Empresa.Nombre, "", new { @id = "errorIdEmpresa2", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Tipo Usuario :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.DropDownListFor(model => model.Usuario.UsuarioTipo.IdUsuarioTipo,
+                                    new SelectList(Model.ListaUsuarioTipo, "IdUsuarioTipo", "Nombre"), new
+                                    {
+                                        @id = "IdUsuarioTipo3",
+                                        @Value = Model.Usuario.UsuarioTipo.IdUsuarioTipo
+                                    })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.UsuarioTipo.IdUsuarioTipo, "", new { @id = "errorIdUsuarioTipo", @class = "error" })
+            </div>
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Email :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Usuario.EmailCoorporativo, new
+       {
+           @id = "IdEmail2",
+           @maxLength = "50",
+           @class = "textinput",
+       })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Usuario.EmailCoorporativo, "", new { @id = "errorIdEmail2", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    Dirección :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Usuario.Direccion, new
+       {
+           @id = "IdDireccion2",
+           @maxLength = "50",
+           @class = "textinput",
+       })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Usuario.Direccion, "", new { @id = "errorIdDireccion2", @class = "error" })
+            </div>
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">
+                    DNI :
+                    <span class="req"></span>
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Usuario.DNI, new
+               {
+                   @id = "IdDNI2",
+                   @maxLength = "8",
+                   @class = "textinput",
+               })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Usuario.DNI, "", new { @id = "errorIdDNI2", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <label class="form-label">
+                Resetear Contraseña General :
+                <span class="req"></span>
+            </label>
+            @Html.CheckBoxFor(model => model.Usuario.CambiarPassword, new { @id = "ChkResetearContrasena" })
+        </div>
+
+    </div>
+    
+
+}
+<div class="formRow">
+    @foreach (var PG in Model.ListaPaginaAccion.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ActualizarUsuario))
+    {
+        <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+                name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+            @PG.Accion.Etiqueta
+        </button>
+    }
+    <div class="clear">
+    </div>
+</div>
+<div class="clear">
+</div>
+<script type="text/javascript">
+    $('#IdEmpresa3').uniform();
+    $('#IdUsuarioTipo3').uniform();
+    $('#IdEstado2').uniform();
+    $('#IdAreaEdit').uniform();
+    $('#IdUnidadOrganicaEdit').uniform();
+
+</script>

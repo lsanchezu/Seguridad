@@ -1,0 +1,6 @@
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Common\bin\Debug\Komatsu.Core.Seguridad.Common.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Common\bin\Debug\Komatsu.Core.Seguridad.Common.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Common\obj\Debug\Komatsu.Core.Seguridad.Common.csproj.AssemblyReference.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Common\obj\Debug\Komatsu.Core.Seguridad.Common.csproj.CoreCompileInputs.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Common\obj\Debug\Komatsu.Core.Seguridad.Common.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Common\obj\Debug\Komatsu.Core.Seguridad.Common.pdb

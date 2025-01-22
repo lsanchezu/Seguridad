@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CampoRequerido" xml:space="preserve">
+    <value>Campo requerido</value>
+  </data>
+  <data name="CampoRequeridoCustom" xml:space="preserve">
+    <value>Campo {0} requerido</value>
+  </data>
+  <data name="CampoRequeridoDescripcion" xml:space="preserve">
+    <value>Los campos son obligatorios</value>
+  </data>
+  <data name="ClaveIngresadaNoCoincide" xml:space="preserve">
+    <value>La clave ingresada no coincide con la actual</value>
+  </data>
+  <data name="FechaNoMenorFechaActual" xml:space="preserve">
+    <value>La fecha ingresada no debe ser menor a la fecha actual</value>
+  </data>
+  <data name="FechaNoMenorFechaFin" xml:space="preserve">
+    <value>La fecha de fin no debe ser menor a la fecha de inicio</value>
+  </data>
+  <data name="FormatoIncorrecto" xml:space="preserve">
+    <value>Formato incorrecto</value>
+  </data>
+  <data name="FormatoIncorrectoCustom" xml:space="preserve">
+    <value>Formato incorrecto para el campo {0}</value>
+  </data>
+  <data name="FormatoIncorrectoEmail" xml:space="preserve">
+    <value>Formato de correo electrónico incorrecto</value>
+  </data>
+  <data name="FormatoIncorrectoEmailCustom" xml:space="preserve">
+    <value>Formato de correo electrónico incorrecto para el campo {0}</value>
+  </data>
+  <data name="FormatoIncorrectoFecha" xml:space="preserve">
+    <value>Formato de fecha incorrecto</value>
+  </data>
+  <data name="FormatoIncorrectoFechaCustom" xml:space="preserve">
+    <value>Formato de fecha incorrecto para el campo {0}</value>
+  </data>
+  <data name="FormatoIncorrectoHora" xml:space="preserve">
+    <value>Formato de hora incorrecto</value>
+  </data>
+  <data name="FormatoIncorrectoHoraCustom" xml:space="preserve">
+    <value>Formato de hora incorrecto para el campo {0}</value>
+  </data>
+  <data name="FormatoIncorrectoPassword" xml:space="preserve">
+    <value>La contraseña debe tener al menos 7 caracteres y debe tener números y/o símbolos especiales.</value>
+  </data>
+  <data name="FormatoIncorrectoWeb" xml:space="preserve">
+    <value>Formato de dirección web incorrecto</value>
+  </data>
+  <data name="FormatoIncorrectoWebCustom" xml:space="preserve">
+    <value>Formato de dirección web incorrecto para el campo {0}</value>
+  </data>
+  <data name="LongitudCadena" xml:space="preserve">
+    <value>Este campo debe tener entre {2} y {1} caracteres</value>
+  </data>
+  <data name="LongitudCadenaCustom" xml:space="preserve">
+    <value>El campo {0} debe tener entre {2} y {1} caracteres</value>
+  </data>
+  <data name="LongitudExacta" xml:space="preserve">
+    <value>Este campo debe tener {1} caracteres</value>
+  </data>
+  <data name="LongitudExactaCustom" xml:space="preserve">
+    <value>El campo {0} debe tener {1} caracteres</value>
+  </data>
+  <data name="RangoValores" xml:space="preserve">
+    <value>El valor debe estar entre {1} y {2}</value>
+  </data>
+  <data name="RangoValoresCustom" xml:space="preserve">
+    <value>El valor para {0} debe estar entre {1} y {2}</value>
+  </data>
+  <data name="SeleccionNecesaria" xml:space="preserve">
+    <value>Seleccione un item</value>
+  </data>
+  <data name="SeleccionNecesariaCustom" xml:space="preserve">
+    <value>Seleccione un item para el campo {0}</value>
+  </data>
+  <data name="SoloDecimal" xml:space="preserve">
+    <value>Este campo sólo admite decimales</value>
+  </data>
+  <data name="SoloDecimalCustom" xml:space="preserve">
+    <value>El campo {0} sólo admite decimales</value>
+  </data>
+  <data name="SoloLetras" xml:space="preserve">
+    <value>Este campo sólo admite letras</value>
+  </data>
+  <data name="SoloLetrasCustom" xml:space="preserve">
+    <value>El campo {0} sólo admite letras</value>
+  </data>
+  <data name="SoloLetrasNumeros" xml:space="preserve">
+    <value>Este campo sólo admite letras y números</value>
+  </data>
+  <data name="SoloLetrasNumerosCaracterEsp" xml:space="preserve">
+    <value>Este campo sólo admite letras, números y caracteres especiales</value>
+  </data>
+  <data name="SoloLetrasNumerosCaracterEspCustom" xml:space="preserve">
+    <value>El campo {0} sólo admite letras, números y caracteres especiales</value>
+  </data>
+  <data name="SoloLetrasNumerosCustom" xml:space="preserve">
+    <value>El campo {0} sólo admite letras y números</value>
+  </data>
+  <data name="SoloLetrasNumerosGuiones" xml:space="preserve">
+    <value>Este campo sólo admite letras, números y guiones</value>
+  </data>
+  <data name="SoloNumeros" xml:space="preserve">
+    <value>Este campo sólo admite números</value>
+  </data>
+  <data name="SoloNumerosCustom" xml:space="preserve">
+    <value>El campo {0} sólo admite números</value>
+  </data>
+  <data name="UsuarioNoExiste" xml:space="preserve">
+    <value>El usuario ingresado no se encuentra registrado</value>
+  </data>
+  <data name="ValorIncorrecto" xml:space="preserve">
+    <value>El valor ingresado es incorrecto</value>
+  </data>
+  <data name="ValorIncorrectoCustom" xml:space="preserve">
+    <value>El valor ingresado es incorrecto para el campo {0}</value>
+  </data>
+</root>

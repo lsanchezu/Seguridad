@@ -1,0 +1,1 @@
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Tests\Komatsu.Core.Seguridad.Client\obj\Debug\Komatsu.Core.Seguridad.Client.csproj.AssemblyReference.cache

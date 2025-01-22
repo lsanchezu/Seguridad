@@ -1,0 +1,150 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+
+@{
+    Layout = null;
+}
+@{
+    String usuarioSistema = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
+    usuarioSistema = usuarioSistema.Contains("\\") ? (usuarioSistema.Split(new string[] { "\\" }, StringSplitOptions.None)[1].ToString()) : (null);
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>MÓDULO DE SEGURIDAD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="3Dev">
+    <link type="text/css" rel="stylesheet" href="~/Content/login/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/login/css/login.css" />
+    <script type="text/javascript" src="@Url.Content("~/Content/login/js/jquery-1.7.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/login/js/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/login/js/jquery-jrumble.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/login/js/login.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/login/js/global.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/login/js/iphone.check.js")"></script>
+</head>
+<body style="overflow: hidden;">
+    <div id="alertMessage" class="error">
+    </div>
+    <div id="successLogin">
+    </div>
+    <div id="loading">
+        <script type="text/javascript">
+            document.write("<div id='loading-container'><p id='loading-content'>" +
+                           "<img id='loading-graphic' src='/Content/login/images/logo.jpg' /><br /> " +
+                           "Cargando...</p></div>");
+        </script>
+    </div>
+    <div class="text_success">
+        <div class="text_message">
+            <img src="~/Content/images/elements/loaders/7.gif" alt="" /><span>@Komatsu.Core.Seguridad.Validation.Globals.Globals.MessageLoadAction</span>
+        </div>
+    </div>
+    <div class="wrapper" id="inner">
+    <!--[if lt IE 9]>
+		<img alt="" src="/Content/login/images/win7.jpg" id="full-screen-background-image" /> 
+	 <![endif]-->
+        <div class="container-fluid">
+            <div style="border-radius: 0 0 5px 5px; background: #00774e; line-height: 36px; padding: 5px;
+                position: absolute; top: 0px; left: 5%;">
+                <label style="color: #fff">
+                    @DateTime.Now.ToString("dddd, d 'de' MMMM 'del' yyyy")</label>
+            </div>
+            <div class="row">
+                <h1>
+                    <strong>MÓDULO DE SEGURIDAD</strong>
+                    <br /><strong>CRP</strong></h1>
+                <div class="clear"></div>
+                <div class="">
+                    <div id="login">
+                        <div class="inner">
+                            <div class="formLogin">
+                                <form name="formLogin" id="formLogin" action="">
+                                <div class="loginPic">
+                                    <img src="~/Content/images/win7_2.jpg" alt="" />
+                                </div>
+                                <input name="usuario" value="Ingrese Usuario" onclick="this.value='';" onfocus="this.select(usuario)"
+                                    onblur="this.value=!this.value?'Ingresar Usuario':this.value;" type="text" id="username_id"
+                                    onkeypress="return repunto(event);return pulsar(event);" class="loginPic_user2" value="" style="border:1px solid #00774e" />
+                                <div class="tip">
+                                    <input value="Contraseña" onclick="this.value='';" onfocus="this.select()" onblur="this.value=!this.value?'Contraseña':this.value;"
+                                        name="clave" type="password" id="password" onkeypress="return pulsar(event);" style="border:1px solid #00774e" />
+                                    <a class="button_login" href="#" id="but_login" onclick="return pulsar(event);">Volver ←</a>
+                                </div>
+                                @Html.Hidden("Id_Url_Login", @Url.Action("IniciarSesion", "Cuenta"))
+                                @Html.Hidden("Id_Url_Home", @Url.Action("Index", "Home"))
+                                </form>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@*    <footer id="versionBar" class="footer">
+		<div id="subFooter" class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<a href="#" class="fade"><img style="bottom:2px" id="logo_footer" src="@Url.Content("~/Content/login/images/logo_footer.png")" alt="" /></a>
+				</div>
+				<div class="span9">
+					
+					<p class="right align_right"><a style="line-height:25px" href="#" class="fade"><img height="28" src='@Url.Content("~/Content/images/logo_footerp.png")' alt="" /></a></p>				
+				</div>
+			</div>
+		</div>
+	</footer>*@
+
+<div id="dialogResultado" title="Mensaje de Validación" style="display: none">
+    <p></p>
+</div>
+
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#loading").slideDown('slow', function () {
+                $(this).remove();
+                $('body').removeAttr('style');
+                $("#username_id").focus();
+            });
+        });
+
+        
+    </script>
+    <script type="text/javascript">
+        function pulsar(e) {
+            tecla = (document.all) ? e.keyCode : e.which;
+            if (tecla == 13 || tecla == 1 || tecla == undefined)
+                ValidarUsuario();
+        }
+
+        function validarNumerosLetras(e) { // 1
+            tecla = (document.all) ? e.keyCode : e.which; // 2
+            if (tecla == 8) return true; // 3
+            else if (tecla == 0) return true;
+            else if (tecla == 9) return true;
+            //else if (tecla == e.keyCode || tecla == e.which) return true;
+            patron = /^[ 0-9-A-z]*$/;
+            //patron = /\w/; // Acepta N(U)meros y Letras
+            te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+
+        function repunto(e) { // 1
+            tecla = (document.all) ? e.keyCode : e.which; // 2
+            if (tecla == 8) return true; // 3
+            else if (tecla == 0) return true;
+            else if (tecla == 9) return true;
+            else if (tecla == 46) return true;
+            else if (tecla == 13 || tecla == undefined) $("#password").focus();
+            //else if (tecla == e.keyCode || tecla == e.which) return true;
+            patron = /^[ 0-9-A-z]*$/;
+            //patron = /\w/; // Acepta N(U)meros y Letras
+            te = String.fromCharCode(tecla); // 5
+            return patron.test(te); // 6
+        }
+    </script>
+</body>
+</html>

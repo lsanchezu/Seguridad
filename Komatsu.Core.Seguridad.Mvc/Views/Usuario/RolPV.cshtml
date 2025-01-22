@@ -1,0 +1,13 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+
+ @Html.DropDownListFor(model => model.Rol.IdRol,
+                        new SelectList(Model.ListaRol,"IdRol","Nombre"),
+                        @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos,new
+                        {
+                         @id="IdRol",
+                         @onchange=""
+                         })
+
+<script type="text/javascript" language="javascript">
+    uniformPartialList('IdRol');
+</script>

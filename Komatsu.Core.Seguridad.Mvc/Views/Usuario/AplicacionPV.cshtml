@@ -1,0 +1,12 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+
+@Html.DropDownListFor(model => model.Aplicacion.IdAplicacion,
+new SelectList(Model.ListaAplicacion, "IdAplicacion", "Nombre"),
+@Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+{
+    @id = "IdAplicacion",
+    @onchange = "BuscarRolesPorAplicacion();"
+})
+<script type="text/javascript" language="javascript">
+    uniformPartialList('IdAplicacion');
+</script>

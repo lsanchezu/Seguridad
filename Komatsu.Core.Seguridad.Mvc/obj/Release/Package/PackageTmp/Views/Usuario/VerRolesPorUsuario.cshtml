@@ -1,0 +1,60 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+@using Komatsu.Core.Seguridad.DataContracts;
+
+
+@if (Model.ListaUsuariosxRol.Count < 1)
+{
+    @Komatsu.Core.Seguridad.Validation.Globals.Globals.GridSearchNotFound
+}
+else
+{
+    <div class="row">
+        <div class="grid12">
+            <table class="tDefault">
+                <thead>
+                    <tr class="fix_head">
+                        <th >Empresa</th>
+                        <th>Aplicación</th>
+                        <th>Rol</th>
+                        <th>Fecha Asigancón</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.ListaUsuariosxRol.Count; i++)
+                    {
+                        <tr class="fix_td">
+                            <td class="person left">@Model.ListaUsuariosxRol[i].Empresa</td>
+
+                            <td style="text-align:left">@Model.ListaUsuariosxRol[i].Aplicacion</td>
+
+                            <td class="person left">@Model.ListaUsuariosxRol[i].Rol</td>
+
+                            <td class="person centrada">@Model.ListaUsuariosxRol[i].FechaAsignacion.ToString("MM/dd/yyyy")</td>
+
+                            @if (@Model.ListaUsuariosxRol[i].Estado == true)
+                            {
+                                <td class="person centrada"><p>Activo</p></td>
+
+                            }
+                            else
+                            {
+                                <td class="person centrada"><p>Inactivo</p></td>
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="formRow noBorderB">
+            <div id="status2" class="status"></div>
+            <div class="formSubmit">
+                <input type="button" value="Cancelar" onclick="Cancelar_Roles();" class="buttonS bBlue formSubmit group_button" />
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+}
+
+

@@ -1,0 +1,77 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@{
+    if (Model.PaginaPaginacion.ListaPagina.Count < 1)
+    {
+        @Komatsu.Core.Seguridad.Validation.Globals.Globals.GridSearchNotFound   
+    }
+    else
+    {
+        var ACTDES = Model.ListaPaginaAccionPermiso.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ActDesPagina);
+        var Detalle = Model.ListaPaginaAccionPermiso.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ModificarPagina);
+        
+        WebGrid Grid = new WebGrid(rowsPerPage: Model.PaginaPaginacion.Paginacion.RowsPerPage, ajaxUpdateContainerId: "Id_Consultar_Pagina_Grilla", ajaxUpdateCallback: "SetTotalRegistrosPagina");
+        Grid.Bind(Model.PaginaPaginacion.ListaPagina, autoSortAndPage: false, rowCount: Model.PaginaPaginacion.Paginacion.RowCount);
+    
+        <div id="Id_Consultar_Pagina_Grilla"> 
+            @Grid.GetHtml(
+                headerStyle: "fix_head",
+                rowStyle: "fix_td",
+                alternatingRowStyle: "fix_td",
+                footerStyle: "pagination",
+                htmlAttributes: new { id = "GrillaConsultaPagina", @class = "tDefault" },
+                mode: WebGridPagerModes.All,
+                firstText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageFirst_Text,
+                previousText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageBack_Text,
+                nextText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageNext_Text,
+                lastText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageLast_Text,
+                columns: Grid.Columns(
+                Grid.Column("Modulo.Aplicacion.Empresa.Nombre", "Empresa", canSort: true, style: "person centrada"),
+                Grid.Column("Modulo.Aplicacion.Nombre", "Aplicación", canSort: true, style: "person centrada"),
+                Grid.Column("Modulo.Nombre", "Módulo", canSort: true, style: "person centrada"),
+                Grid.Column("DescripcionAgrupacion", "Agrupación", canSort: true),
+                Grid.Column("Nombre", "Página", canSort: true, style: "person centrada"),
+                Grid.Column("Estado.Nombre", "Estado", canSort: true, style: "person centrada"),
+                Grid.Column("", "Página Padre", canSort: false, style: "person centrada", format:
+                @<text>
+                        @if (item.IdPaginaPadre == 0)
+                        {
+                            <input type="checkbox" checked="checked" disabled="disabled"/>              
+                        }
+                        else
+                        {
+                            <input type="checkbox" disabled="disabled"/>
+                        }
+                </text>),
+                Grid.Column("", Komatsu.Core.Seguridad.Validation.Globals.Globals.GridHeaderActions_ActivateDeactivate, canSort: false, style: "person centrada", format:
+                @<text>
+                    @if (ACTDES != null)
+                    {
+                        if (item.Estado.IdEstado == 1)
+                        {
+                            <a  style="cursor:pointer" class="darbajae" onclick="ActivarDesactivarPagina(@item.IdPagina, 2, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Desactivar')"/>                                                                          
+                        }
+                        else
+                        {
+                            <a  style="cursor:pointer" class="daraltae" onclick="ActivarDesactivarPagina(@item.IdPagina, 1, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Activar')"/>       
+                        }
+                    }
+                </text>),
+                Grid.Column("", "Detalle", canSort: false, style: "person centrada", format:
+                @<text> 
+                    @{
+                        if (Detalle != null)
+                        {
+                            <a  style="" class="select_table" onclick="EditarPagina(@item.IdPagina,@item.IdPaginapadre);"/>
+                        }
+                    }
+                </text>)
+                                 )
+                             )
+            @Html.HiddenFor(model => model.PaginaPaginacion.Paginacion.RowCount, new { @id = "P_RowCount" })
+            @Html.HiddenFor(model => model.PaginaPaginacion.Paginacion.RowsPerPage, new { @id = "P_RowsPerPage" })
+            @Html.HiddenFor(model => model.PaginaPaginacion.Paginacion.FooterDesc, new { @id = "P_FooterDesc" })
+        </div>
+    }
+}

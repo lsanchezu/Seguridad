@@ -1,0 +1,173 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Komatsu.Core.Seguridad", "Komatsu.Core.Seguridad", "{DE42350C-9E6F-488C-B91D-5B18A9714412}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{BCC1A462-9D4C-4F29-AAF0-B358CB741270}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic", "Business Logic", "{7D114B6B-F7F3-44C9-9E11-2044B4B7E58F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource Access", "Resource Access", "{B7A3A713-29BF-41E1-8758-7A4736A3637D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service Interface", "Service Interface", "{077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{53B5D427-F60E-422B-9838-FF127FC36860}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{AD3D689E-625D-49CC-9A18-5C466B7365A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{408DD834-5A9D-4319-A382-9C7BC88B0E93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{E08357AF-6A36-4035-998F-E3AE9CC2A513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.BusinessEntities", "Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\Komatsu.Core.Seguridad.BusinessEntities.csproj", "{10752A9D-8D43-4A9C-BF2E-57219B8525C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.BusinessLogic", "Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessLogic\Komatsu.Core.Seguridad.BusinessLogic.csproj", "{7CEC2268-BC34-44DC-A25B-5DC745AC1790}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.DataAccess", "Komatsu.Core.Seguridad\Source\Resource Access\Komatsu.Core.Seguridad.DataAccess\Komatsu.Core.Seguridad.DataAccess.csproj", "{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.DataContracts", "Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.DataContracts\Komatsu.Core.Seguridad.DataContracts.csproj", "{80840956-911F-450C-8BAC-C18CA9A65E49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.FaultContracts", "Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\Komatsu.Core.Seguridad.FaultContracts.csproj", "{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.MessageContracts", "Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.MessageContracts\Komatsu.Core.Seguridad.MessageContracts.csproj", "{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.ServiceImplementation", "Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.ServiceImplementation\Komatsu.Core.Seguridad.ServiceImplementation.csproj", "{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.ServiceContracts", "Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.ServiceContracts\Komatsu.Core.Seguridad.ServiceContracts.csproj", "{A617D1D5-6FE0-4746-B02D-EA7921207A4D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Komatsu.Core.Seguridad.Host(1)", "Komatsu.Core.Seguridad\Tests\Komatsu.Core.Seguridad.Host", "{CB45ED4E-DD74-45E8-A5ED-BB93B1E2ED9E}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}|Komatsu.Core.Seguridad.ServiceImplementation.ServiceImplementation.dll;{10752A9D-8D43-4A9C-BF2E-57219B8525C2}|Komatsu.Core.Seguridad.BusinessEntities.BusinessEntities.dll;{7CEC2268-BC34-44DC-A25B-5DC745AC1790}|Komatsu.Core.Seguridad.BusinessLogic.dll;{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}|Komatsu.Core.Seguridad.DataAccess.DataAccess.dll;{80840956-911F-450C-8BAC-C18CA9A65E49}|Komatsu.Core.Seguridad.DataContracts.DataContracts.dll;{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}|Komatsu.Core.Seguridad.FaultContracts.FaultContracts.dll;{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}|Komatsu.Core.Seguridad.MessageContracts.MessageContracts.dll;{A617D1D5-6FE0-4746-B02D-EA7921207A4D}|Komatsu.Core.Seguridad.ServiceContracts.ServiceContracts.dll;{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}|Komatsu.Core.Seguridad.Common.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/Komatsu.Core.Seguridad.Host"
+		Debug.AspNetCompiler.PhysicalPath = "Komatsu.Core.Seguridad\Tests\Komatsu.Core.Seguridad.Host\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Komatsu.Core.Seguridad.Host\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Komatsu.Core.Seguridad.Host"
+		Release.AspNetCompiler.PhysicalPath = "Komatsu.Core.Seguridad\Tests\Komatsu.Core.Seguridad.Host\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Komatsu.Core.Seguridad.Host\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60198"
+		VWDDynamicPort = "false"
+		SlnRelativePath = "Komatsu.Core.Seguridad\Tests\Komatsu.Core.Seguridad.Host\"
+		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "true"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.Client", "Komatsu.Core.Seguridad\Tests\Komatsu.Core.Seguridad.Client\Komatsu.Core.Seguridad.Client.csproj", "{4A57B532-82F3-4377-96F4-548E227B7CFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.Mvc", "Komatsu.Core.Seguridad.Mvc\Komatsu.Core.Seguridad.Mvc.csproj", "{F2D0086D-0C14-46A6-80C8-99EF26AEB69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.Provider", "Komatsu.Core.Seguridad.Provider\Komatsu.Core.Seguridad.Provider.csproj", "{089B2EF2-6018-4F0B-AB0E-7964CFF854A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.Common", "Komatsu.Core.Common\Komatsu.Core.Seguridad.Common.csproj", "{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Komatsu.Core.Seguridad.Validation", "Komatsu.Core.Seguridad.Validation\Komatsu.Core.Seguridad.Validation.csproj", "{83971009-C956-4E24-A8CE-CCD9D787983E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{10752A9D-8D43-4A9C-BF2E-57219B8525C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10752A9D-8D43-4A9C-BF2E-57219B8525C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10752A9D-8D43-4A9C-BF2E-57219B8525C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10752A9D-8D43-4A9C-BF2E-57219B8525C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEC2268-BC34-44DC-A25B-5DC745AC1790}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEC2268-BC34-44DC-A25B-5DC745AC1790}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEC2268-BC34-44DC-A25B-5DC745AC1790}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEC2268-BC34-44DC-A25B-5DC745AC1790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80840956-911F-450C-8BAC-C18CA9A65E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80840956-911F-450C-8BAC-C18CA9A65E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80840956-911F-450C-8BAC-C18CA9A65E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80840956-911F-450C-8BAC-C18CA9A65E49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A617D1D5-6FE0-4746-B02D-EA7921207A4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A617D1D5-6FE0-4746-B02D-EA7921207A4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A617D1D5-6FE0-4746-B02D-EA7921207A4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A617D1D5-6FE0-4746-B02D-EA7921207A4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB45ED4E-DD74-45E8-A5ED-BB93B1E2ED9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB45ED4E-DD74-45E8-A5ED-BB93B1E2ED9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB45ED4E-DD74-45E8-A5ED-BB93B1E2ED9E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB45ED4E-DD74-45E8-A5ED-BB93B1E2ED9E}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4A57B532-82F3-4377-96F4-548E227B7CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A57B532-82F3-4377-96F4-548E227B7CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A57B532-82F3-4377-96F4-548E227B7CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A57B532-82F3-4377-96F4-548E227B7CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D0086D-0C14-46A6-80C8-99EF26AEB69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D0086D-0C14-46A6-80C8-99EF26AEB69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D0086D-0C14-46A6-80C8-99EF26AEB69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D0086D-0C14-46A6-80C8-99EF26AEB69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089B2EF2-6018-4F0B-AB0E-7964CFF854A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089B2EF2-6018-4F0B-AB0E-7964CFF854A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089B2EF2-6018-4F0B-AB0E-7964CFF854A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089B2EF2-6018-4F0B-AB0E-7964CFF854A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C3AF042-EBEE-4427-8E99-52A5FE1A7675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83971009-C956-4E24-A8CE-CCD9D787983E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83971009-C956-4E24-A8CE-CCD9D787983E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83971009-C956-4E24-A8CE-CCD9D787983E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83971009-C956-4E24-A8CE-CCD9D787983E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BCC1A462-9D4C-4F29-AAF0-B358CB741270} = {DE42350C-9E6F-488C-B91D-5B18A9714412}
+		{7D114B6B-F7F3-44C9-9E11-2044B4B7E58F} = {BCC1A462-9D4C-4F29-AAF0-B358CB741270}
+		{B7A3A713-29BF-41E1-8758-7A4736A3637D} = {BCC1A462-9D4C-4F29-AAF0-B358CB741270}
+		{077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB} = {BCC1A462-9D4C-4F29-AAF0-B358CB741270}
+		{53B5D427-F60E-422B-9838-FF127FC36860} = {DE42350C-9E6F-488C-B91D-5B18A9714412}
+		{AD3D689E-625D-49CC-9A18-5C466B7365A3} = {DE42350C-9E6F-488C-B91D-5B18A9714412}
+		{408DD834-5A9D-4319-A382-9C7BC88B0E93} = {BCC1A462-9D4C-4F29-AAF0-B358CB741270}
+		{E08357AF-6A36-4035-998F-E3AE9CC2A513} = {BCC1A462-9D4C-4F29-AAF0-B358CB741270}
+		{10752A9D-8D43-4A9C-BF2E-57219B8525C2} = {7D114B6B-F7F3-44C9-9E11-2044B4B7E58F}
+		{7CEC2268-BC34-44DC-A25B-5DC745AC1790} = {7D114B6B-F7F3-44C9-9E11-2044B4B7E58F}
+		{A0A8610C-E6C9-4EA1-AFB1-3B03CBA08E32} = {B7A3A713-29BF-41E1-8758-7A4736A3637D}
+		{80840956-911F-450C-8BAC-C18CA9A65E49} = {077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB}
+		{4848F94A-3E10-4537-9DF8-1F5ADDEB6356} = {077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB}
+		{0DCD5849-FC06-44AD-86A5-81E8BEE12B39} = {077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB}
+		{5899A246-EB96-4F1D-BBC2-C210CCFFC9EC} = {077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB}
+		{A617D1D5-6FE0-4746-B02D-EA7921207A4D} = {077312DB-C91F-4DE1-8FE3-14CDEAE1E8CB}
+		{CB45ED4E-DD74-45E8-A5ED-BB93B1E2ED9E} = {53B5D427-F60E-422B-9838-FF127FC36860}
+		{4A57B532-82F3-4377-96F4-548E227B7CFF} = {53B5D427-F60E-422B-9838-FF127FC36860}
+		{F2D0086D-0C14-46A6-80C8-99EF26AEB69B} = {AD3D689E-625D-49CC-9A18-5C466B7365A3}
+		{089B2EF2-6018-4F0B-AB0E-7964CFF854A9} = {AD3D689E-625D-49CC-9A18-5C466B7365A3}
+		{7C3AF042-EBEE-4427-8E99-52A5FE1A7675} = {408DD834-5A9D-4319-A382-9C7BC88B0E93}
+		{83971009-C956-4E24-A8CE-CCD9D787983E} = {E08357AF-6A36-4035-998F-E3AE9CC2A513}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Data.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Validation.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.Logging.Database.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.WCF.5.0.505.0\lib\NET35;packages\EnterpriseLibrary.ExceptionHandling.Logging.5.0.505.0\lib\NET35
+		SolutionGuid = {97E78C48-4F1E-4D85-9194-CC60FBF5249D}
+	EndGlobalSection
+EndGlobal

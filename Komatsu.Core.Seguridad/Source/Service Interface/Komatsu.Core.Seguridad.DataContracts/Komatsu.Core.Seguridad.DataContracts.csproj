@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80840956-911F-450C-8BAC-C18CA9A65E49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Komatsu.Core.Seguridad.DataContracts</RootNamespace>
+    <AssemblyName>Komatsu.Core.Seguridad.DataContracts.DataContracts</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="GeneratedCode\Accion.cs" />
+    <Compile Include="GeneratedCode\Aplicacion.cs" />
+    <Compile Include="GeneratedCode\AplicacionPaginacion.cs" />
+    <Compile Include="GeneratedCode\AplicacionTraductor.cs" />
+    <Compile Include="GeneratedCode\Area.cs" />
+    <Compile Include="GeneratedCode\Auditoria.cs" />
+    <Compile Include="GeneratedCode\Cargo.cs" />
+    <Compile Include="GeneratedCode\Empresa.cs" />
+    <Compile Include="GeneratedCode\EmpresaAplicacion.cs" />
+    <Compile Include="GeneratedCode\EmpresaPaginacion.cs" />
+    <Compile Include="GeneratedCode\Estado.cs" />
+    <Compile Include="GeneratedCode\Grupo.cs" />
+    <Compile Include="GeneratedCode\Lenguaje.cs" />
+    <Compile Include="GeneratedCode\ListaAgrupacion.cs" />
+    <Compile Include="GeneratedCode\ListaAccion.cs" />
+    <Compile Include="GeneratedCode\ListaAplicacion.cs" />
+    <Compile Include="GeneratedCode\ListaAplicacionTraductor.cs" />
+    <Compile Include="GeneratedCode\ListaArea.cs" />
+    <Compile Include="GeneratedCode\ListaEmpresa.cs" />
+    <Compile Include="GeneratedCode\ListaEmpresaAplicacion.cs" />
+    <Compile Include="GeneratedCode\ListaEstado.cs" />
+    <Compile Include="GeneratedCode\ListaGrupo.cs" />
+    <Compile Include="GeneratedCode\ListaLenguaje.cs" />
+    <Compile Include="GeneratedCode\ListaModulo.cs" />
+    <Compile Include="GeneratedCode\ListaModuloTraductor.cs" />
+    <Compile Include="GeneratedCode\ListaOperacion.cs" />
+    <Compile Include="GeneratedCode\ListaPagina.cs" />
+    <Compile Include="GeneratedCode\ListaPaginaAccion.cs" />
+    <Compile Include="GeneratedCode\ListaPaginaGrupo.cs" />
+    <Compile Include="GeneratedCode\ListaPaginaTraductor.cs" />
+    <Compile Include="GeneratedCode\ListaPermisoPerfil.cs" />
+    <Compile Include="GeneratedCode\ListaPolitica.cs" />
+    <Compile Include="GeneratedCode\ListaRecursiveTreeView.cs" />
+    <Compile Include="GeneratedCode\ListaRol.cs" />
+    <Compile Include="GeneratedCode\ListaRolTraductor.cs" />
+    <Compile Include="GeneratedCode\ListaTreeview.cs" />
+    <Compile Include="GeneratedCode\ListaTreeViewAttribute.cs" />
+    <Compile Include="GeneratedCode\ListaTreeviewHierarchyObject.cs" />
+    <Compile Include="GeneratedCode\ListaUnidadOrganica.cs" />
+    <Compile Include="GeneratedCode\ListaUsuario.cs" />
+    <Compile Include="GeneratedCode\ListaUsuarioRol.cs" />
+    <Compile Include="GeneratedCode\ListaUsuarioTipo.cs" />
+    <Compile Include="GeneratedCode\Agrupacion.cs" />
+    <Compile Include="GeneratedCode\Modulo.cs" />
+    <Compile Include="GeneratedCode\ModuloPaginacion.cs" />
+    <Compile Include="GeneratedCode\ModuloTraductor.cs" />
+    <Compile Include="GeneratedCode\Operacion.cs" />
+    <Compile Include="GeneratedCode\Pagina.cs" />
+    <Compile Include="GeneratedCode\PaginaAccion.cs" />
+    <Compile Include="GeneratedCode\PaginaAccionPaginacion.cs" />
+    <Compile Include="GeneratedCode\Paginacion.cs" />
+    <Compile Include="GeneratedCode\PaginaGrupo.cs" />
+    <Compile Include="GeneratedCode\PaginaPaginacion.cs" />
+    <Compile Include="GeneratedCode\PaginaTraductor.cs" />
+    <Compile Include="GeneratedCode\PerfilTransaccion.cs" />
+    <Compile Include="GeneratedCode\PermisoPerfil.cs" />
+    <Compile Include="GeneratedCode\Politica.cs" />
+    <Compile Include="GeneratedCode\RecursiveTreeView.cs" />
+    <Compile Include="GeneratedCode\RespuestaUsuario.cs" />
+    <Compile Include="GeneratedCode\Rol.cs" />
+    <Compile Include="GeneratedCode\RolPaginacion.cs" />
+    <Compile Include="GeneratedCode\RolTraductor.cs" />
+    <Compile Include="GeneratedCode\RolUsusario.cs" />
+    <Compile Include="GeneratedCode\Treeview.cs" />
+    <Compile Include="GeneratedCode\TreeViewAttribute.cs" />
+    <Compile Include="GeneratedCode\TreeviewHierarchyObject.cs" />
+    <Compile Include="GeneratedCode\UnidadOrganica.cs" />
+    <Compile Include="GeneratedCode\User.cs" />
+    <Compile Include="GeneratedCode\Usuario.cs" />
+    <Compile Include="GeneratedCode\UsuarioPaginacion.cs" />
+    <Compile Include="GeneratedCode\UsuarioRol.cs" />
+    <Compile Include="GeneratedCode\UsuarioTipo.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="MenuItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Roles="DataContractRole" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

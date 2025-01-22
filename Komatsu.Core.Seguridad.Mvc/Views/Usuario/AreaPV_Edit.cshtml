@@ -1,0 +1,11 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+
+@Html.DropDownListFor(model => model.IdArea,
+new SelectList(Model.ListaArea, "IdArea", "Descripcion"),
+"Ninguno", new
+{
+    @id = "IdAreaEdit"
+})
+<script type="text/javascript" language="javascript">
+    uniformPartialList('IdAreaEdit');
+</script>

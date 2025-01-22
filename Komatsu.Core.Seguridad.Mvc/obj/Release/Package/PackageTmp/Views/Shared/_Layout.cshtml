@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CRP - Sistema de Seguridad </title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+        name='viewport' />
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Content/login/css/login.css")' />
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Content/themes/komatsu/styles.css")'/>
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Content/themes/komatsu/jquery.autocomplete.css")' />
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Content/themes/komatsu/treeview/jquery.treeview.css")'/>
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Content/Multiselect/css/jquery.multiselect.css")'/>
+    <link rel='stylesheet' type='text/css' href='@Url.Content("~/Content/Multiselect/css/jquery.multiselect.filter.css")'/>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery-1.7.1.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery-ui-1.8.20.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery.autocomplete.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery.validate.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/knockout-2.1.0.debug.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/knockout-2.1.0.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/MicrosoftAjax.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/MicrosoftMvcValidation.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/modernizr-2.5.3.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Scripts/ToJson.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/Content/Multiselect/js/jquery.multiselect.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/Content/Multiselect/js/jquery.multiselect.filter.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/sitemapstyler.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/UserControl.Helper.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/ckeditor/ckeditor.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/excanvas.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/jquery.flot.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/jquery.flot.orderBars.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/jquery.flot.pie.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/jquery.flot.resize.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/jquery.sparkline.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/autogrowtextarea.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/chosen.jquery.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.autotab.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.chosen.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.cleditor.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.dualListBox.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.ibutton.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.inputlimiter.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.maskedinput.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.mousewheel.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.tagsinput.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.uniform.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.validationEngine-en.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/jquery.validationEngine.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/forms/uniform.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/others/jquery.elfinder.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/others/jquery.fullcalendar.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/tables/jquery.dataTables.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/tables/jquery.resizable.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/tables/jquery.sortable.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.breadcrumbs.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.collapsible.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.colorpicker.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.easytabs.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.fancybox.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.fileTree.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.jgrowl.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.progress.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.rounded.progress.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.sourcerer.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.timeentry.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/ui/jquery.tipsy.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/uploader/plupload.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/uploader/jquery.plupload.queue.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/uploader/plupload.html4.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/uploader/plupload.html5.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/wizards/jquery.form.wizard.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/jquery.browser.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/plugins/charts/excanvas.min.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/files/bootstrap.js")'></script>
+    <script type='text/javascript' src='@Url.Content("~/Content/js/files/functions.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/Content/texteditor/js/tinymce/tinymce.min.js")'></script>
+</head>
+<body>
+    <div id="top">
+        <div class="wrapper">
+            <a href="#" title="" style="cursor: default" class="logo">
+                
+            </a>
+            <div class="topNav">
+                <ul class="userNav">
+                    <li>
+                        <a class="profile" title="" href="#">(@Komatsu.Core.Seguridad.Mvc.Helper.UtilSession.Obtener_UsuarioSession().UserName) 
+                        - 
+                            @Komatsu.Core.Seguridad.Mvc.Helper.UtilSession.Obtener_UsuarioSession().NombreApellido
+                        - 
+                        </a></li>
+                    <li><a class="logout" title="" href="@Url.Action("CerrarSesion", "Cuenta")">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <div id="dialogAlert" style="display: none">
+        <p id="buttonAlert">
+        </p>
+    </div>
+    <div id="loading">
+        <div id='loading-container'>
+            <p id='loading-content'>
+            </p>
+        </div>
+    </div>
+    <div class="text_success">
+        <div class="text_message">
+            <img src='@Url.Content("~/Content/images/elements/loaders/7.gif")' alt="" />
+            <span></span>
+        </div>
+    </div>
+    <div id="sidebar" class="without">
+        <div class="mainNav">
+            @Html.MvcSiteMap().Menu(false, true, false)
+        </div>
+    </div>
+    <div id="content" style="height: 100%; width: auto;">
+        @RenderBody()
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(window).load(function () {
+        $("#loading").slideDown('slow', function () {
+            $(this).remove();
+            $('body').removeAttr('style');
+        });
+    });
+
+    $("#menu").attr("class", "nav");
+    var iconList = document.createElement("span");
+    $("#menu li ul li a").each(function (indice, elemento) {
+        var span = "<span class='icol-list'></span>";
+        $(this).html(span + $(this).html());
+    });
+
+    $(".text_success").hide();
+    $(".text_message").hide();
+
+    $(".text_success").ajaxStart(function () {
+        $(".text_message").show();
+        $(this).show();
+    })
+
+    $(".text_success").ajaxComplete(function () {
+        $(".text_message").hide();
+        $(this).hide();
+    });
+</script>
+@*<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
+*@

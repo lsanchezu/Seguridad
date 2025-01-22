@@ -1,0 +1,347 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Mvc.Helper
+@using Komatsu.Core.Seguridad.Common
+
+@Html.HiddenFor(model => model.Pagina.IdPagina, new { @id = "P_IdPagina" })
+@Html.Hidden("PagePreview", 1)
+<div>
+    <fieldset>
+        <div class="widget fluid">
+            <div class="whead">
+                <h6>
+                    Datos Generales</h6>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="formRow fluid">
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Url:</label></div>
+                    <div class="grid9">
+                        @Html.TextBoxFor(m => m.Pagina.Url, new
+                        {
+                            @id = "PE_Url",
+                            @maxLength = "200",
+                            @class = "textinput"
+                        })
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Url, "", new { @id = "errorPE_Url", @class = "error" })
+                    </div>
+                </div>
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Ruta Icono :</label></div>
+                    <div class="grid9">
+                        @Html.TextBoxFor(m => m.Pagina.Icono, new
+                        {
+                            @id = "PG_Icono",
+                            @maxLength = "200",
+                            @class = "textinput"
+                        })
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Icono, "", new { @id = "errorPG_Icono", @class = "error" })
+                    </div>
+                </div>
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Orden:<span class="req">*</span></label></div>
+                    <div class="grid9">
+                        @Html.TextBoxFor(m => m.Pagina.Orden, new
+                        {
+                            @id = "PG_IdOrden",
+                            @maxLength = "2",
+                            @class = "textinput",
+                            @onkeypress = "return validarSoloNumeros(event);"
+                        })
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Orden, "", new { @id = "errorPG_IdOrden", @class = "error" })
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="formRow fluid">
+                <div class="grid8">
+                    <table class="tDefault" id="GrillaEditarrPagina" style="text-align: center;">
+                        <thead>
+                            <tr class="fix_head">
+                                <th scope="col">
+                                    Nombre
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fix_td">
+                                <td class="izquierda">
+                                    @Html.TextBoxFor(m => m.Pagina.Nombre, new
+                                    {
+                                        @id = "PG_NombrePagina",
+                                        @maxLength = "200",
+                                        @class = "textinput"
+                                    })
+                                    <br class="clear" />
+                                    @Html.ValidationMessageFor(model => model.Pagina.Nombre, "", new { @id = "errorPG_NombrePagina", @class = "error" })
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Página Visible:<span class="req"></span></label></div>
+                    <div class="grid9">
+                        <div class="grid3" style="margin-left: 0px">
+                            @if (Model.Pagina.Visible)
+                            { 
+                                <input checked="checked" id="PG_SiVisible" name="PG_SiVisible" type="radio" />
+                            }
+                            else 
+                            {
+                                <input id="PG_SiVisible" name="PG_SiVisible" type="radio" />
+                            }
+                            Sí
+                        </div>
+                        <div class="grid3" style="margin-left: 0px">
+                            @if (!Model.Pagina.Visible)
+                            { 
+                                <input checked="checked" id="PG_NoVisible" name="PG_SiVisible" type="radio" />
+                            }
+                            else
+                            { 
+                                <input id="PG_NoVisible" name="PG_SiVisible" type="radio" />
+                            }
+                            No
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="clear">
+                </div>
+            </div>
+
+
+
+            <div class="formRow fluid">
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Empresa:<span class="req">*</span></label></div>
+                    <div class="grid9" id="PG_Div_Empresa">
+                        @Html.DropDownListFor(model => model.Pagina.Modulo.Aplicacion.Empresa.IdEmpresa,
+                        new SelectList(Model.ListaEmpresa, "IdEmpresa", "Nombre"),
+                        @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+                        {
+                            @id = "PG_IdEmpresa",
+                            @onchange = "P_BuscarAplicacionPorEmpresa(true)"
+                        })
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList('PG_IdEmpresa');
+                        </script>
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Modulo.Aplicacion.Empresa.IdEmpresa, "", new { @id = "errorPG_IdEmpresa", @class = "error" })
+                    </div>
+                </div>
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Aplicación:<span class="req">*</span></label></div>
+                    <div class="grid9" id="PG_Div_Aplicacion">
+                        @Html.DropDownListFor(model => model.Pagina.Modulo.Aplicacion.IdAplicacion,
+                        new SelectList(Model.ListaAplicacion, "IdAplicacion", "Nombre"),
+                        @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+                        {
+                            @id = "PG_IdAplicacion",
+                            @onchange = "P_BuscarModuloPorAplicacion(true);"
+                        })
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList('PG_IdAplicacion');
+                        </script>
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Modulo.Aplicacion.IdAplicacion, "", new { @id = "errorPG_IdAplicacion", @class = "error" })
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="formRow fluid">
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Modulo:<span class="req">*</span></label></div>
+                    <div class="grid9" id="PG_Div_Modulo">
+                        @Html.DropDownListFor(model => model.Modulo.IdModulo,
+                        new SelectList(Model.ListaModulo, "IdModulo", "Nombre"),
+                        @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+                        {
+                            @id = "PG_IdModulo",
+                            @onchange = "P_BuscarPaginaPadre();"
+                        })
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList('PG_IdModulo');
+                        </script>
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Modulo.IdModulo, "", new { @id = "errorPG_IdModulo", @class = "error" })
+                    </div>
+                </div>
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Página Padre:<span class="req"></span></label></div>
+                    <div class="grid9" id="PG_Div_Padre">
+                        @Html.DropDownListFor(model => model.Pagina.IdPaginaPadre,
+                        new SelectList(Model.ListaPagina, "IdPagina", "Nombre"),
+                        @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+                        {
+                            @id = "PG_IdPaginaPadre"
+                        })
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList('PG_IdPaginaPadre');
+                        </script>
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.IdPaginaPadre, "", new { @id = "errorPG_IdPaginaPadre", @class = "error" })
+                    </div>
+                </div>
+                <div class="grid4">
+                    <div class="grid3">
+                        <label>
+                            Grupo:<span class="req">*</span></label></div>
+                    <div class="grid9">
+                        @Html.MetaDropDownList(model => model.Grupo.IdsGrupo,
+                        new MultiSelectList((System.Collections.IEnumerable)Model.ListaGrupo, "IdGrupo", "Nombre",
+                        (System.Collections.IEnumerable)Model.ListaGrupo.Where(model => model.Check).Select(model => model.IdGrupo)),
+                        new
+                        {
+                            @id = "PG_IdGrupo",
+                            multiple = "multiple",
+                            @onchange = "BuscarPaginaAccion();"
+                        }) 
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList("PG_IdGrupo");
+
+                            $(function () {
+                                $("#PG_IdGrupo").multiselect(
+                                    {
+                                        selectedList: 1,
+                                        noneSelectedText: ' Seleccione '
+                                    }
+                                ).multiselectfilter();
+                                $(".ui-multiselect").attr("style", "width: 210px");
+                            });
+                        </script>
+                        <br class="clear" />
+                        @Html.ValidationMessageFor(model => model.Pagina.Grupo.IdGrupo, "", new { @id = "errorPG_IdGrupo", @class = "error" })
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+            </div>
+            <div class="formRow fluid">
+                <div class="grid4">
+                    <div class="grid6">
+                        <label>Aplicacion Escritorio</label>
+                    </div>
+                    <div class="grid3">
+                        <input type="checkbox" id="iIdEscritorio" />
+                        <script type="text/javascript" language="javascript">
+                            $("#iIdEscritorio").bind("change",ChangeCheckEscritorio);
+                            ChangeCheckEscritorio();
+                        </script>
+
+                    </div>
+                </div>
+                <div class="grid4" id ="DivAgrupacion">
+                    <div class="grid3">
+                        <label>Agrupación</label>
+                    </div>
+                    <div class="grid9" id="PG_Div_Agrupacion">
+                        @Html.DropDownListFor(model => model.Agrupacion.IdAgrupacion,
+                        new SelectList(Model.ListaAgrupacion, "IdAgrupacion", "Descripcion"), 
+                        new
+                        {
+                            @id = "PG_IdAgrupacion"
+                        })
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList('PG_IdAgrupacion');
+                        </script>                        
+                    </div>
+                </div>
+                <div class="grid4" id="DivTamañoMenu">
+                    <div class="grid3">
+                        <label> Tamaño Menú</label>
+                    </div>
+                    <div class="grid9">
+                        <select id="iIdTamanoButton">
+                            <option value="1">Mediano</option>
+                            <option value="2">Grande</option>
+                        </select>
+                        <script type="text/javascript" language="javascript">
+                            uniformPartialList('iIdTamanoButton');
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+            <div class="formRow">
+                @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.EditarPagina || x.Accion.Grupo.IdGrupo.ToString() == Constantes.NuevaPagina))
+                {
+                    <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+                    name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+                    @PG.Accion.Etiqueta</button> 
+                }
+                <div class="clear">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+    </fieldset>
+    <div class="widget" id="Div_Acciones">
+        <div class="whead">
+            <div class="whead">
+                <span class="titleIcon check"></span>
+                <h6>
+                    Detalle de Acciones</h6>
+                <div class="num right">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="Id_Consultar_Accion_Grilla">
+        </div>
+    </div>
+</div>
+
+
+@Html.HiddenFor(model => model.IdTamanoMenu, new { @id = "iIdTamanoMenuCarga" })
+
+<script type="text/javascript" language="javascript">
+    BuscarPaginaAccion();
+
+
+    if ($("#PG_IdAgrupacion").val()!= 0) {
+    
+        $("#iIdTamanoButton").val($("#iIdTamanoMenuCarga").val());
+        $("#iIdEscritorio").attr("checked","checked");
+        ChangeCheckEscritorio();
+
+        debugger;
+        var hola = $("#iIdTamanoButton").val();
+
+
+        if ($("#iIdTamanoButton").val()==2) {
+            $("#iIdTamanoButton").parent().children("span").first().text("GRANDE");
+        }
+        
+
+    }
+   
+
+</script>

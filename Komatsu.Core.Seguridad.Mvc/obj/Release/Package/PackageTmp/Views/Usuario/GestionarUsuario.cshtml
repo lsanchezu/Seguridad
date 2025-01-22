@@ -1,0 +1,302 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.UsuarioViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@foreach (var item in Model.ListaPolitica)
+{
+    @Html.Hidden("Hdn_Longitud", item.IDLongMinima_Contrasena)
+    @Html.Hidden("Hdn_Diferencia", item.IDDiferencia_ContrasenaUsuario)
+    @Html.Hidden("Hdn_Complejidad", item.IDComplejidadContraseña)
+}
+<div class="formRow fluid">
+
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Organización :
+                <span class="req"></span>
+            </label>
+        </div>
+
+        <div class="grid9">
+            @Html.DropDownListFor(model => model.Empresa.IdEmpresa,
+            new SelectList(Model.ListaEmpresa, "IdEmpresa", "Nombre"),
+            @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+            {
+                @id = "IdEmpresa2"
+            })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.Empresa.IdEmpresa, "", new { @id = "errorIdEmpresa", @class = "error" })
+        </div>
+    </div>
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Modo Usuario :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid8">
+            <label class="span3" style="margin:5px">
+                <input type="radio" name="r1" id="Directorio" value="1" onchange="GetSelectedItem2('Directorio','Normal')" /> Dominio
+            </label>
+            &nbsp;
+            @*<br class="clear" />*@
+            <label class="span3" style="margin:5px">
+                <input type="radio" name="r1" id="Normal" value="2" checked="checked" onchange="GetSelectedItem2('Directorio','Normal')" /> Interno
+            </label>
+            &nbsp;
+            @*<br class="clear" />*@
+            <label class="span3" style="margin:5px">
+                <input type="radio" name="r1" id="Externo" value="3" onchange="GetSelectedItem2('Directorio','Normal')" /> Externo
+            </label>
+        </div>
+    </div>
+</div>
+<div class="formRow fluid">
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Usuario :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            @Html.TextBoxFor(m => m.Usuario.UserName, new
+       {
+           @id = "IdUsuario",
+           @maxLength = "50",
+           @class = "textinput",
+           @onKeyUp = "toUpper(this)",
+           @onkeypress = "return validarNumerosLetrasAC(event)"
+       })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.Usuario.UserName, "", new { @id = "errorIdUsuario", @class = "error" })
+        </div>
+    </div>
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Nombres Completos :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            @Html.TextBoxFor(m => m.Usuario.NombreApellido, new
+       {
+           @id = "IdNombre",
+           @maxLength = "50",
+           @class = "textinput",
+           @onkeypress = "return val_AZ(event)",
+           @onKeyUp = "toUpper(this)"
+       })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.Usuario.NombreApellido, "", new { @id = "errorIdNombre", @class = "error" })
+        </div>
+    </div>
+
+</div>
+<div class="formRow fluid">
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Contraseña :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            <input id="Contrasena" type="password" maxlength="6" />
+            <br class="clear" />
+            <span id="errorContrasena" class="error"></span>
+        </div>
+    </div>
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Repetir Contraseña :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            <input id="RContrasena" type="password" maxlength="6" />
+            <br class="clear" />
+            <span id="RerrorContrasena" class="error"></span>
+        </div>
+    </div>
+</div>
+
+<div class="formRow fluid">
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Email :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            @Html.TextBoxFor(m => m.Usuario.EmailCoorporativo, new
+       {
+           @id = "IdEmail",
+           @maxLength = "50",
+           @class = "textinput",
+           @onKeyUp = "toUpper(this)"
+       })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.Usuario.EmailCoorporativo, "", new { @id = "errorIdEmail", @class = "error" })
+        </div>
+    </div>
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Cargo :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            @Html.DropDownListFor(model => model.UsuarioTipo.IdUsuarioTipo,
+                                 new SelectList(Model.ListaUsuarioTipo, "IdUsuarioTipo", "Nombre"),
+                        @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+                        {
+                            @id = "IdUsuarioTipo2",
+                        })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.UsuarioTipo.IdUsuarioTipo, "", new { @id = "errorIdUsuarioTipo2", @class = "error" })
+        </div>
+    </div>
+</div>
+
+<div class="formRow fluid">
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                DNI :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            @Html.TextBoxFor(m => m.Usuario.DNI, new
+       {
+           @id = "IdDNI",
+           @maxLength = "8",
+           @class = "textinput",
+           @onkeypress = "return soloNumeros(event)",
+           @onKeyUp = "toUpper(this)"
+       })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.Usuario.DNI, "", new { @id = "errorIdDNI", @class = "error" })
+        </div>
+    </div>
+
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Sexo :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            <select id="IdEstado2" class="span3">
+                <option value="MASCULINO">Masculino</option>
+                <option value="FEMENINO">Femenino</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="formRow fluid">
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Dirección :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            @Html.TextBoxFor(m => m.Usuario.Direccion, new
+      {
+          @id = "IdDireccion",
+          @maxLength = "50",
+          @class = "textinput",
+          @onKeyUp = "toUpper(this)"
+      })
+            <br class="clear" />
+            @Html.ValidationMessageFor(model => model.Usuario.Direccion, "", new { @id = "errorIdDireccion", @class = "error" })
+        </div>
+    </div>
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Estado :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            <label class="span4" style="margin:5px;">
+                <input type="radio" name="r2" id="UActivo" value="1" checked="checked" /> Activo
+            </label>
+            <label class="span4" style="margin:5px;">
+                <input type="radio" name="r2" id="UInactivo" value="2" /> Inactivo
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="formRow fluid" id="UsuarioTercero">
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Tipo Empresa :
+                <span class="req"></span>
+            </label>
+        </div>
+        <div class="grid9">
+            <label class="span3" style="margin:5px">
+                <input type="radio" name="rbtTerceros" id="Sede" value="relacionados" onchange="ObtenerListaEmpresarelacionada();" /> Sede
+            </label>
+            <label class="span3" style="margin:5px">
+                <input type="radio" name="rbtTerceros" id="Tercero" value="terceros" onchange="ObtenerListaEmpresarelacionada();" /> Terceros
+            </label>
+        </div>
+    </div>
+    <div class="grid6">
+        <div class="grid3">
+            <label class="form-label">
+                Empresa Relacionada :
+                <span class="req"></span>
+            </label>
+        </div>
+
+        <div class="grid9">
+            <div id="DivEmpresaRelacionada">
+                @Html.Partial(ParametrosPartialView.U_EmpresaRelacionadaPV, Model)
+            </div>
+            <span id="errorEmpresaTerceros" class="error"></span>
+        </div>
+    </div>
+
+</div>
+
+<div class="formRow">
+    @foreach (var PG in Model.ListaPaginaAccion.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.NuevoUsuario))
+    {
+        <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+                name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+            @PG.Accion.Etiqueta
+        </button>
+    }
+    <div class="clear">
+    </div>
+</div>
+<div class="clear">
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(".multiselect").multiselect();
+    });
+</script>
+<script type="text/javascript">
+    $('#IdEmpresa2').uniform();
+    $('#IdUsuarioTipo2').uniform();
+    $('#IdEstado2').uniform();
+    $('#IdUnidadOrganica').uniform();
+    $('#IdArea').uniform();
+</script>

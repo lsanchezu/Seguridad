@@ -1,0 +1,6 @@
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\bin\Release\Komatsu.Core.Seguridad.BusinessEntities.BusinessEntities.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\bin\Release\Komatsu.Core.Seguridad.BusinessEntities.BusinessEntities.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\obj\Release\Komatsu.Core.Seguridad.BusinessEntities.csprojAssemblyReference.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\obj\Release\Komatsu.Core.Seguridad.BusinessEntities.csproj.CoreCompileInputs.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\obj\Release\Komatsu.Core.Seguridad.BusinessEntities.BusinessEntities.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Business Logic\Komatsu.Core.Seguridad.BusinessEntities\obj\Release\Komatsu.Core.Seguridad.BusinessEntities.BusinessEntities.pdb

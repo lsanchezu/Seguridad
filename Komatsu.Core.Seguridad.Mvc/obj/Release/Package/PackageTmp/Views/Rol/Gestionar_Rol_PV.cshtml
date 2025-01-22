@@ -1,0 +1,131 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.RolViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@using (Ajax.BeginForm(null, null, null, new { id = "frmGestionarRol" }))
+{
+    @Html.HiddenFor(model => model.Rol.IdRol, new { @id = "IdRol" })    
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">Aplicación :
+                    <span class="req"></span>
+                </label></div>
+            <div class="grid9">
+                @Html.DropDownListFor(model => model.Rol.Aplicacion.IdAplicacion,
+                new SelectList(Model.ListaAplicacion, "IdAplicacion", "Nombre"),
+                @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Seleccione, new
+                {
+                    @id = "GestIdAplicacion"
+                })
+                <script type="text/javascript" language="javascript">
+                    uniformPartialList('GestIdAplicacion');
+                </script>
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Rol.Aplicacion.IdAplicacion, "", new { @id = "errorGestIdAplicacion", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid4">
+                <label class="form-label">¿Administrador?: 
+                </label>
+            </div>
+            <div class="grid8">
+                @Html.CheckBoxFor(m => m.Rol.SiSuperAdmi, new
+                {
+                    @id = "SiSuperAdmi"
+                })
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="formRow fluid">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">Descripción :
+                    <span class="req"></span>
+                </label></div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.Rol.Nombre, new
+                {
+                    @id = "GestNombreRol",
+                    @maxLength = "50",
+                    @class = "textinput",
+                })
+                <br class="clear" />
+                @Html.ValidationMessageFor(model => model.Rol.Nombre, "", new { @id = "errorGestNombreRol", @class = "error" })
+            </div>
+        </div>
+        <div class="grid6">
+            <div class="grid4">
+                <label class="form-label">¿Fechas?: 
+                </label>
+            </div>
+            <div class="grid8">
+                @Html.CheckBoxFor(m => m.Rol.SiRango, new
+                {
+                    @id = "SiRango",
+                    @onchange = "VerFechas();"
+                })
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="formRow fluid" id="Div_Fecha">
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">Fecha Inicio: 
+                </label>
+            </div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.FechaIni, new
+                {
+                    @id = "FechaInicio",
+                    @class = "datepicker textTransform",
+                    @maxLength = "10",
+                    @value = String.Format("{0:dd/MM/yyyy}", " ")
+                })
+                <br  class="clear"/>
+                    @Html.ValidationMessageFor(model => model.Rol.FechaInicio, "", new { @id = "errorFechaInicio", @class = "error" })
+            </div>
+            <br  class="clear"/>
+        </div>
+        <div class="grid6">
+            <div class="grid3">
+                <label class="form-label">Fec Fin:
+                </label></div>
+            <div class="grid9">
+                @Html.TextBoxFor(m => m.FechaFin, new
+                {
+                    @id = "FechaFin",
+                    @class = "datepicker textTransform",
+                    @maxLength = "10",
+                    @value = String.Format("{0:dd/MM/yyyy}", " ")
+                })
+                <br  class="clear"/>
+                    @Html.ValidationMessageFor(model => model.Rol.FechaFin, "", new { @id = "errorFechaFin", @class = "error" })
+            </div>
+            <br  class="clear"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+}
+<div class="formRow">
+    @foreach (var PG in Model.ListaPaginaAccion.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.EditarRol || x.Accion.Grupo.IdGrupo.ToString() == Constantes.NuevoRol))
+    {
+        <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+        name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+        @PG.Accion.Etiqueta</button> 
+    }
+    <div class="clear">
+    </div>
+</div>
+<div class="clear">
+</div>
+
+<script type="text/javascript" language="javascript">
+    VerFechas();
+    FechaFormat();
+</script>

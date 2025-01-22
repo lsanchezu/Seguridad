@@ -1,0 +1,13 @@
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\bin\Debug\Komatsu.Core.Seguridad.Validation.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\bin\Debug\Komatsu.Core.Seguridad.Validation.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.csproj.AssemblyReference.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.Globals.Globals.resources
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.Globals.Messages.resources
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.Labels.RolLabel.resources
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.Security.Security.resources
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.Settings.Settings.resources
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.Validation.Validation.resources
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.csproj.GenerateResource.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.csproj.CoreCompileInputs.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Validation\obj\Debug\Komatsu.Core.Seguridad.Validation.pdb

@@ -1,0 +1,76 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.RolViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+@{
+    if (Model.RolPaginacion.ListaRol.Count < 1)
+    {
+        @Komatsu.Core.Seguridad.Validation.Globals.Globals.GridSearchNotFound   
+    }
+    else
+    {
+        var ACTDES = Model.ListaPaginaAccion.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ActDesRol);
+        var Detalle = Model.ListaPaginaAccion.Find(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ModificarRol);
+        
+        WebGrid Grid = new WebGrid(rowsPerPage: Model.RolPaginacion.Paginacion.RowsPerPage, ajaxUpdateContainerId: "Id_Consultar_Rol_Grilla", ajaxUpdateCallback: "SetTotalRegistrosRol");
+        Grid.Bind(Model.RolPaginacion.ListaRol, autoSortAndPage: false, rowCount: Model.RolPaginacion.Paginacion.RowCount);
+    
+        <div id="Id_Consultar_Rol_Grilla"> 
+            @Grid.GetHtml(
+                headerStyle: "fix_head",
+                rowStyle: "fix_td",
+                alternatingRowStyle: "fix_td",
+                footerStyle: "pagination",
+                htmlAttributes: new { id = "GrillaConsultaRol", @class = "tDefault" },
+                mode: WebGridPagerModes.All,
+                firstText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageFirst_Text,
+                previousText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageBack_Text,
+                nextText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageNext_Text,
+                lastText: Komatsu.Core.Seguridad.Validation.Globals.Globals.ButtonPageLast_Text,
+                columns: Grid.Columns(
+                Grid.Column("Aplicacion.Nombre", "Aplicación", canSort: true, style: "person centrada"),
+                Grid.Column("Nombre", "Rol", canSort: true, style: "person centrada"),
+                Grid.Column("", Komatsu.Core.Seguridad.Validation.Globals.Globals.GridHeaderIsAdministrator, canSort: false, style: "person centrada", format:
+                @<text>
+                    <label> @(item.SiSuperAdmi ? "Si" : "No") </label>
+                </text>),
+                Grid.Column("Estado.Nombre", "Estado", canSort: false, style: "person centrada"),
+                Grid.Column("", Komatsu.Core.Seguridad.Validation.Globals.Globals.GridHeaderActions_ActivateDeactivate, canSort: false, style: "person centrada", format:
+                @<text>
+                    @if (ACTDES != null)
+                    {
+                        if (item.SiSuperAdmi)
+                        {
+                        <a  style="cursor:pointer" class="darbajae" onclick="$('#dialogResultado p').html('@Komatsu.Core.Seguridad.Validation.Security.Security.Rol_Desactivar_Administrador');$('#dialogResultado').dialog('open');" />
+                        }
+                        else
+                        {
+                            if (item.Estado.IdEstado == 1)
+                            {
+                        <a  style="cursor:pointer" class="darbajae" onclick="ActivarDesactivarRol(@item.IdRol, 2, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Desactivar')"/>                                                                          
+                            }
+                            else
+                            {
+                        <a  style="cursor:pointer" class="daraltae" onclick="ActivarDesactivarRol(@item.IdRol, 1, '@Komatsu.Core.Seguridad.Validation.Security.Security.Confirmacion_Activar')"/>       
+                            }
+                        }
+                    }
+                </text>),
+                Grid.Column("", "Detalle", canSort: false, style: "person centrada", format:
+                @<text>
+                    @{
+                        if (Detalle != null)
+                        {
+                            <a  style="" class="select_table" onclick="EditarRol(@item.IdRol);"/>    
+                        }
+                    }                                                            
+                </text>)
+                )
+            )
+            @Html.HiddenFor(model => model.RolPaginacion.Paginacion.RowCount, new { @id = "RowCount" })
+            @Html.HiddenFor(model => model.RolPaginacion.Paginacion.RowsPerPage, new { @id = "RowsPerPage" })
+            @Html.HiddenFor(model => model.RolPaginacion.Paginacion.FooterDesc, new { @id = "FooterDesc" })
+        </div>
+    }
+    
+}
+

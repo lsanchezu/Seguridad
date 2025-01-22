@@ -1,0 +1,13 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+
+@Html.DropDownListFor(model => model.Aplicacion.IdAplicacion,
+new SelectList(Model.ListaAplicacion, "IdAplicacion", "Nombre"),
+@Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+{
+    @id = "P_IdAplicacion",
+    @onkeypress = "EnterSubmit(event,'BuscarPagina');",
+    @onchange = "P_BuscarModuloPorAplicacion();"
+})
+<script type="text/javascript" language="javascript">
+    uniformPartialList('P_IdAplicacion');
+</script>

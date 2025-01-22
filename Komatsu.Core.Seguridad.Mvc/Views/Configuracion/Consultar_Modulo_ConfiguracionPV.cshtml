@@ -1,0 +1,135 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Common;
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/View/Seguridad.Configuracion.Modulo.js")"></script>
+@Html.Hidden("Url_Consultar_Modulo", Url.Action("Consultar_Modulo", "Configuracion"))
+@Html.Hidden("Url_Registrar_Modulo", Url.Action("Registrar_Modulo", "Configuracion"))
+@Html.Hidden("Url_Editar_Modulo", Url.Action("Editar_Modulo", "Configuracion"))
+@Html.Hidden("Url_Insertar_Modulo", Url.Action("Insertar_Modulo", "Configuracion"))
+@Html.Hidden("Url_Actualizar_Modulo", Url.Action("Actualizar_Modulo", "Configuracion"))
+@Html.Hidden("Url_ActualizarEstado_Modulo", Url.Action("ActualizarEstado_Modulo", "Configuracion"))
+@Html.Hidden("Url_M_AplicacionPorEmpresa", Url.Action("M_AplicacionPorEmpresa", "Configuracion"))
+@Html.Hidden("Url_M_Empresa", Url.Action("M_Empresa", "Configuracion"))
+@Html.Hidden("Url_M_Aplicacion", Url.Action("M_Aplicacion", "Configuracion"))
+
+<div class="wrapper">
+    <div class="main">
+        <div class="form">
+            <fieldset>
+                <div class="widget fluid">
+                    <div class="whead">
+                        <h6>
+                            Criterios de Búsqueda</h6>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="formRow fluid">
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Empresa :<span class="req"></span></label></div>
+                            <div class="grid9" id="M_Div_Empresa">
+                                @Html.DropDownListFor(model => model.Empresa.IdEmpresa,
+                                new SelectList(Model.ListaEmpresa, "IdEmpresa", "Nombre"),
+                                @Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+                                {
+                                    @id = "M_IdEmpresa",
+                                    @onkeypress = "EnterSubmit(event,'BuscarModulo');",
+                                    @onchange = "M_BuscarAplicacionPorEmpresa();"
+                                })
+                            </div>
+                        </div>
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Aplicación :<span class="req"></span></label></div>
+                            <div class="grid9" id="M_Div_Aplicacion">
+                                <select id="tmp1">
+                                    <option>- TODOS -</option>
+                                </select>
+                                <script type="text/javascript" language="javascript">
+                                    uniformPartialList('tmp1');
+                                </script>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="formRow fluid">
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Nombre :<span class="req"></span></label></div>
+                            <div class="grid9">
+                                @Html.TextBoxFor(m => m.Aplicacion.Nombre, new
+                                {
+                                    @id = "M_NombreModulo",
+                                    @maxLength = "200",
+                                    @class = "textinput",
+                                    @onkeypress = "EnterSubmit(event,'BuscarModulo');"
+                                })
+                            </div>
+                        </div>
+                        <div class="grid6">
+                            <div class="grid3">
+                                <label>
+                                    Descripción :<span class="req"></span></label></div>
+                            <div class="grid9">
+                                @Html.TextBoxFor(m => m.Aplicacion.Descripcion, new
+                           {
+                               @id = "M_DescripcionModulo",
+                               @maxLength = "200",
+                               @class = "textinput",
+                               @onkeypress = "EnterSubmit(event,'BuscarModulo');"
+                           })
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="formRow noBorderB">
+                        <div id="status2" class="status">
+                        </div>
+                        <div class="formSubmit">
+                            @foreach (var PG in Model.ListaPaginaAccionPermiso.FindAll(x => x.Accion.Grupo.IdGrupo.ToString() == Constantes.ConsultarModulo))
+                            {
+                                <button class="buttonS bBlue formSubmit group_button" style="cursor: pointer" id="@PG.Accion.CodigoHTML"
+                                name="@PG.Accion.Nombre" type="button" title="@PG.Accion.Etiqueta" onclick="@PG.Accion.Evento">
+                                @PG.Accion.Etiqueta</button> 
+                            }
+                            <div class="clear">
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="widget">
+        <div class="whead">
+            <div class="whead">
+                <span class="titleIcon check"></span>
+                <h6>
+                    Resultados de Búsqueda</h6>
+                <div class="num right">
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div id="Id_Consultar_Modulo_Grilla">
+        </div>
+    </div>
+</div>
+
+<div id="dialogGestionarModulo" class="j_modal" style="display:none">
+</div>
+
+<script type="text/javascript" language="javascript">
+    BuscarModulo();
+    InicioJPopUp("#dialogGestionarModulo", 700, 285, true, "Gestionar Módulo");
+</script>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A617D1D5-6FE0-4746-B02D-EA7921207A4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Komatsu.Core.Seguridad.ServiceContracts</RootNamespace>
+    <AssemblyName>Komatsu.Core.Seguridad.ServiceContracts.ServiceContracts</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Core">
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GeneratedCode\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IServicioConfiguracion.cs" />
+    <Compile Include="IServicioPerfil.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IServicioRol.cs" />
+    <Compile Include="IServicioUsuario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Komatsu.Core.Seguridad.DataContracts\Komatsu.Core.Seguridad.DataContracts.csproj">
+      <Project>{80840956-911F-450C-8BAC-C18CA9A65E49}</Project>
+      <Name>Komatsu.Core.Seguridad.DataContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komatsu.Core.Seguridad.FaultContracts\Komatsu.Core.Seguridad.FaultContracts.csproj">
+      <Project>{4848F94A-3E10-4537-9DF8-1F5ADDEB6356}</Project>
+      <Name>Komatsu.Core.Seguridad.FaultContracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Komatsu.Core.Seguridad.MessageContracts\Komatsu.Core.Seguridad.MessageContracts.csproj">
+      <Project>{0DCD5849-FC06-44AD-86A5-81E8BEE12B39}</Project>
+      <Name>Komatsu.Core.Seguridad.MessageContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Roles="ServiceContractRole" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

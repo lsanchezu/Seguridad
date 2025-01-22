@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<VisualWebDeveloper>
+  <Globals>
+    <UserProperties Roles="HostRole"/>
+  </Globals>
+
+  <iisExpressSettings windowsAuthentication="disabled" anonymousAuthentication="enabled" useClassicPipelineMode="false"/>
+</VisualWebDeveloper>

@@ -1,0 +1,31 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.ConfiguracionViewModel
+@using Komatsu.Core.Seguridad.Mvc.Helper
+
+@Html.DropDownListFor(model => model.Empresa.IdEmpresa,
+new SelectList(Model.ListaEmpresa, "IdEmpresa", "Nombre"),
+@Komatsu.Core.Seguridad.Validation.Globals.Globals.ComboBox_Todos, new
+{
+    @id = "A_IdEmpresa",
+    @onkeypress = "EnterSubmit(event,'BuscarAplicacion');"
+})
+@*@Html.MetaDropDownList(model => model.Empresa.IdEmpresa,
+new MultiSelectList((System.Collections.IEnumerable)Model.ListaEmpresa, "IdEmpresa", "Nombre",
+(System.Collections.IEnumerable)Model.ListaEmpresa.Where(model => model.Check).Select(model => model.IdEmpresa)),
+new
+{
+    @id = "A_IdEmpresa",
+    multiple = "multiple"
+}) *@
+<script type="text/javascript" language="javascript">
+    uniformPartialList("A_IdEmpresa");
+
+    @*$(function () {
+        $("#A_IdEmpresa").multiselect(
+            {
+                selectedList: 1,
+                noneSelectedText: ' Todos '
+            }
+         ).multiselectfilter();
+        $(".ui-multiselect").attr("style", "width: 210px");
+    });*@
+</script>

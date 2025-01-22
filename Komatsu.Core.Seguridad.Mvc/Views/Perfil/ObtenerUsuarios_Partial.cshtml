@@ -1,0 +1,31 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.PerfilViewModel
+@if (Model.ListaUsuariosNoAsignados != null)
+{
+    <p>USUARIOS DEL SISTEMA</p>
+    @Html.DropDownListFor(model => model.Usuario.IdUsuario,
+        new MultiSelectList((System.Collections.IEnumerable)Model.ListaUsuariosNoAsignados, "IdUsuario", "NombreApellido"),
+    new
+    {
+        @id = "box1View",
+        @multiple = "multiple",
+        @class = "multiple",
+        @style = "height:300px;",
+        @autocomplete = "off"
+    })
+}
+<br />
+@if (Model.ListaUsuariosAsignados != null)
+{
+    <p>USUARIOS ASIGNADOS AL ROL</p>
+    @Html.DropDownListFor(model => model.Usuario.IdUsuario,
+            new MultiSelectList((System.Collections.IEnumerable)Model.ListaUsuariosAsignados, "IdUsuario", "NombreApellido"),
+    new
+    {
+        @id = "box2View",
+        @multiple = "multiple",
+        @class = "multiple",
+        @style = "height:300px;",
+        @autocomplete = "off"
+    })
+}
+

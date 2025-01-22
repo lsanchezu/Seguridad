@@ -1,0 +1,6 @@
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\bin\Release\Komatsu.Core.Seguridad.FaultContracts.FaultContracts.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\bin\Release\Komatsu.Core.Seguridad.FaultContracts.FaultContracts.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\obj\Release\Komatsu.Core.Seguridad.FaultContracts.csprojAssemblyReference.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\obj\Release\Komatsu.Core.Seguridad.FaultContracts.csproj.CoreCompileInputs.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\obj\Release\Komatsu.Core.Seguridad.FaultContracts.FaultContracts.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad\Source\Service Interface\Komatsu.Core.Seguridad.FaultContracts\obj\Release\Komatsu.Core.Seguridad.FaultContracts.FaultContracts.pdb

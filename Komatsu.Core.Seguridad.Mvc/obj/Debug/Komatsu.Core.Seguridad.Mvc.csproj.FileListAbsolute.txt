@@ -1,0 +1,140 @@
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Mvc.dll.config
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Mvc.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Mvc.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Antlr3.Runtime.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.AspNet.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.Core.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Common.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.DataContracts.DataContracts.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Provider.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Validation.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.ReportViewer.Common.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.ReportViewer.WebForms.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.Web.Infrastructure.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.WebActivator.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Newtonsoft.Json.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Net.Http.Formatting.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Helpers.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.WebHost.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Mvc.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Optimization.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Razor.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Deployment.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Razor.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebActivatorEx.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebGrease.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.Data.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.WebData.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Org.Mentalis.Security.Cryptography.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Mono.Math.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Common.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Provider.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Provider.dll.config
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Validation.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.DataContracts.DataContracts.pdb
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.ReportViewer.WebForms.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.WebActivator.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Helpers.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Mvc.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Razor.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Deployment.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Razor.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Newtonsoft.Json.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Net.Http.Formatting.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.WebHost.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.Data.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.WebData.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.AspNet.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.Core.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Org.Mentalis.Security.Cryptography.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Mono.Math.xml
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.csproj.AssemblyReference.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.csproj.CoreCompileInputs.cache
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.csproj.CopyComplete
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.dll
+D:\01-TFS\02-MINSUR\02-Seguridad\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.pdb
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Mvc.dll.config
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Mvc.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Mvc.pdb
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Antlr3.Runtime.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.AspNet.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.Core.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Common.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.DataContracts.DataContracts.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Provider.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Validation.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.Web.Infrastructure.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.WebActivator.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Newtonsoft.Json.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Net.Http.Formatting.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Helpers.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.WebHost.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Mvc.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Optimization.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Razor.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Deployment.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Razor.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebActivatorEx.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebGrease.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.Data.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.WebData.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Mono.Math.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Common.pdb
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Provider.pdb
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Provider.dll.config
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.Validation.pdb
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Komatsu.Core.Seguridad.DataContracts.DataContracts.pdb
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.ReportViewer.WebForms.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\MvcSiteMapProvider.WebActivator.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Helpers.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Mvc.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Razor.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Deployment.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.WebPages.Razor.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Newtonsoft.Json.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Net.Http.Formatting.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\System.Web.Http.WebHost.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.Data.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\WebMatrix.WebData.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.AspNet.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.Core.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OAuth.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\bin\Mono.Math.xml
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.csproj.AssemblyReference.cache
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.csproj.CoreCompileInputs.cache
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.csproj.CopyComplete
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.dll
+C:\Sol_ERPSeguridadCore NetFramework 4.8\Sol_ERPSeguridadCore\Komatsu.Core.Seguridad.Mvc\obj\Debug\Komatsu.Core.Seguridad.Mvc.pdb

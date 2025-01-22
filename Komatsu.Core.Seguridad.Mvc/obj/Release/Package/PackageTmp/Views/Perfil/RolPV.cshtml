@@ -1,0 +1,13 @@
+﻿@model Komatsu.Core.Seguridad.Mvc.Models.ViewModel.PerfilViewModel
+
+@Html.DropDownListFor(m => m.Rol, new SelectList(Model.ListaRol, "IdRol", "Nombre"),
+"- Seleccione -",
+new
+{
+    @class = "span2",
+    @id = "IdRol",
+    @onchange = "mostrarUsuariosPorRol()"
+})
+<script type="text/javascript" language="javascript">
+    uniformPartialList('IdRol');
+</script>
